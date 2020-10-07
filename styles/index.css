@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: lightcyan;
+
+}
+
+nav {
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-item {
+    width: 100px;
+}
+
+#burger {
+    background-color: grey;
+    margin-right: auto;
+}
+
+.nav-item > img {
+    width: 3rem;
+}
+
+.title-container {
+    height: 14rem;
+    width: 100vw;
+    overflow: hidden;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 1px solid black;
+    background-color: whitesmoke;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 0;
+    
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 2.5rem;
+    letter-spacing: 1.5rem;
+    border-bottom: 1px solid black;
+  
+}
+
+
+h2 {
+    font-size: 7rem;
+    font-weight: normal;
+    align-self: center;
+    /* position: absolute;
+    top: 5rem; */
+    margin: auto;
+    letter-spacing: 4rem;
+}
+
+#main-pic {
+    padding-top: 2rem;
+    height: 43rem;
+    background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    gap: 5rem;
+}
+
+#main-pic > img {
+    height: 40rem;
+}
+
+section {
+    height: auto;
+    background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15rem;
+    justify-content: center;
+    align-content: flex-end;
+    border-top: 1px solid black;
+    padding: .5rem;
+
+}
+
+.shop-nav {
+    width: 15rem;
+    height: 15rem;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: auto 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shop-nav > p {
+    text-align: center;
+    font-size: 2.5rem;
+
+}
+
+
+@media only screen and (max-width: 800px) {
+    h2 {
+        letter-spacing: 2rem;
+    }
+
+    #main-pic {
+        gap: 0;
+        height: 30rem;
+    }
+
+
+    #main-pic > img {
+        height: 23rem;
+    }
+    
+    section {
+        gap: 2rem;    
+    }
+
+    .shop-nav {
+        width: 100vw;
+        height: 20rem;
+        border-radius: 0%;
+    
+    }
+
+
+  }
+
