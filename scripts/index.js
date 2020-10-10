@@ -79,8 +79,8 @@ storedSkates.forEach(skate => {
     `
 });
 
-let skateName = document.querySelectorAll("h4");
-let skateNameChoice = skateName.innerTEXT;
+//let skateName = document.querySelectorAll("h4");
+//let skateNameChoice = skateName.innerTEXT;
 
 
 let buyBTN = document.querySelectorAll(".buy-btn");
@@ -91,7 +91,7 @@ for (let i = 0; i < buyBTN.length; i++) {
 
     buyBTN[i].addEventListener("click", () => {
         //console.log("added to cart");
-        cartNumbers();
+        cartNumbers(skates[i]);
     }) 
 }
 
@@ -103,7 +103,8 @@ function onLoadCartNumbers() {
     }
 }
 
-function cartNumbers() {
+function cartNumbers(skate) {
+    //console.log("the product clicked is", skate);
     let productNumbers = localStorage.getItem("cartNumbers");
 
     productNumbers = parseInt(productNumbers);
@@ -116,7 +117,32 @@ function cartNumbers() {
         document.querySelector(".nav-item span").textContent = 1;
     }
     
+    setItems(skate);
 }
+
+function setItems(skate) {
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+
+    if(cartItems != null) {
+    
+        if(cartItems[skate.name] == undefined) {
+            cartItems = {
+                ...cartItems,
+                [skate.name]: skate
+            }
+        }
+        cartItems[skate.name].inCart += 1;
+    } else {
+        skate.inCart = 1;
+        cartItems = {
+            [skate.name]: skate
+        }
+    }
+
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+}
+
 
 
 onLoadCartNumbers();
