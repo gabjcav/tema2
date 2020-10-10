@@ -144,8 +144,9 @@ function setItems(skate) {
 }
 
 
-
 onLoadCartNumbers();
+
+
 
 
 
