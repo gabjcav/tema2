@@ -10,14 +10,14 @@ html {
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: lightcyan;
+    background-color: white;
     width: 100vw;
     overflow-x: hidden;
 
 }
 
 nav {
-    background-color: whitesmoke;
+    background-color: white;
     border-bottom: 1px solid black;
 
     width: 100vw;
@@ -54,7 +54,7 @@ nav {
     flex-direction: column;
     position: relative;
     border-bottom: 1px solid black;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 h1, h2 {
@@ -85,7 +85,7 @@ h2 {
 #main-pic {
     padding-top: 2rem;
     height: 43rem;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -99,7 +99,7 @@ h2 {
 
 #shop-nav-container {
     height: auto;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
     gap: 15rem;
@@ -139,7 +139,7 @@ h3 {
     margin: 0;
     padding: 2rem;
     height: 10rem;
-    background-color: whitesmoke;
+    background-color: white;
     font-size: 5rem;
     font-weight: normal;
     text-align: center;
@@ -163,11 +163,14 @@ h3 {
     background-color: white;
     grid-gap: 5px;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
 
 }
 
 article > img {
     height: 200px;
+
 }
 
 
