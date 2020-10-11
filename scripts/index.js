@@ -75,7 +75,7 @@ storedSkates.forEach(skate => {
     <p class="type-box">Type: ${skate.type}</p>
     <p class="price-box">Price: ${skate.price}</p>
     </div>
-    <button class="buy-btn">Buy Me</button>
+    <button class="buy-btn">Select</button>
     </article>
     `
 });
@@ -159,17 +159,24 @@ function totalCost(product) {
     
 }
 
+// function displayCart() {
+//     let cartItems = localStorage.getItem("productsInCart");
+//     cartItems = JSON.parse(carItems);
+//     console.log(carItems);
+// };
+
 onLoadCartNumbers();
+//displayCart();
 
 
 //console.log(shopBag);
 
-function displayCart() {
-    document.body.innerHTML += `<div id="cart-container">test test </div>`
-    let cartContainer = document.querySelector("#cart-container");
+// function displayCart() {
+//     document.body.innerHTML += `<div id="cart-container">test test </div>`
+//     let cartContainer = document.querySelector("#cart-container");
     //shopBag.style.backgroundColor = "blue";
 
-}
+//}
 
 // function hideCart() {
 //     let cartContainer = document.querySelector("#cart-container");
@@ -179,7 +186,7 @@ function displayCart() {
 // }
 
 
-shopBag.addEventListener("mouseenter", displayCart)
+// shopBag.addEventListener("mouseenter", displayCart)
 //shopBag.addEventListener("mouseout", hideCart)
 
 
