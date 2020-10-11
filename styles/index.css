@@ -210,17 +210,25 @@ p {
     left: 3rem;
 }
 
+/* ----------STYLE FOR HIDDEN CART DISPLAY: ----------------*/
+
+/* #cart-container {
+    position: relative;
+    z-index: 9;
+    top: -127rem;
+    left: 80rem;
+    height: 56rem;
+    width: 30rem;
+    background-color: lightgrey;
+    margin: 1rem;
+
+    }
 
 
 
 
 
-
-
-
-
-
-
+ */
 
 
 

@@ -1,5 +1,6 @@
 const skateContainer = document.querySelector("#skate-container");
 //let cartCounter = document.querySelector(".nav-item span");
+const shopBag = document.querySelector("#shop-bag");
 
  const skates = [
     {
@@ -158,19 +159,28 @@ function totalCost(product) {
     
 }
 
-
 onLoadCartNumbers();
 
 
+//console.log(shopBag);
+
+function displayCart() {
+    document.body.innerHTML += `<div id="cart-container">test test </div>`
+    let cartContainer = document.querySelector("#cart-container");
+    //shopBag.style.backgroundColor = "blue";
+
+}
+
+// function hideCart() {
+//     let cartContainer = document.querySelector("#cart-container");
+//     cartContainer.display = "none";
+//     //shopBag.style.backgroundColor = "white";
+
+// }
 
 
-
-
-
-
-
-
-
+shopBag.addEventListener("mouseenter", displayCart)
+//shopBag.addEventListener("mouseout", hideCart)
 
 
 
