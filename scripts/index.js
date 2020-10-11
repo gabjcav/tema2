@@ -1,7 +1,7 @@
 const skateContainer = document.querySelector("#skate-container");
 //let cartCounter = document.querySelector(".nav-item span");
 
- let skates = [
+ const skates = [
     {
         name: "Reidell Solaris",
         type: "Roller Derby",
@@ -54,15 +54,15 @@ const skateContainer = document.querySelector("#skate-container");
 
 ];
 
-let key = "";
-let value = "";
+//let key = "";
+//let value = "";
 
 let skatesToString = JSON.stringify(skates);
 
 localStorage.setItem("skates", skatesToString);
 
-localStorage.setItem(key, value);
-let localValue = localStorage.getItem(key);
+//localStorage.setItem(key, value);
+//let localValue = localStorage.getItem(key);
 
 let storedSkates = JSON.parse(localStorage.getItem("skates"));
 
@@ -88,10 +88,10 @@ let buyBTN = document.querySelectorAll(".buy-btn");
 //console.log(skateName[1]);
 
 for (let i = 0; i < buyBTN.length; i++) {
-
     buyBTN[i].addEventListener("click", () => {
         //console.log("added to cart");
         cartNumbers(skates[i]);
+        totalCost(skates[i])
     }) 
 }
 
@@ -104,7 +104,6 @@ function onLoadCartNumbers() {
 }
 
 function cartNumbers(skate) {
-    //console.log("the product clicked is", skate);
     let productNumbers = localStorage.getItem("cartNumbers");
 
     productNumbers = parseInt(productNumbers);
@@ -125,7 +124,6 @@ function setItems(skate) {
     cartItems = JSON.parse(cartItems);
 
     if(cartItems != null) {
-    
         if(cartItems[skate.name] == undefined) {
             cartItems = {
                 ...cartItems,
@@ -139,8 +137,25 @@ function setItems(skate) {
             [skate.name]: skate
         }
     }
-
     localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+}
+
+function totalCost(product) {
+    //console.log("The product price is", product.price, "of", product.name);
+    let cartCost = localStorage.getItem("totalCost");
+    
+
+    console.log("My cartCost is", cartCost);
+    console.log(typeof cartCost);
+
+    if(cartCost != null) {
+        cartCost = parseInt(cartCost);
+        localStorage.setItem("totalCost", cartCost + product.price);
+    } else {
+        localStorage.setItem("totalCost", product.price);
+    }
+
+    
 }
 
 
