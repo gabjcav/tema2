@@ -1,6 +1,7 @@
 const skateContainer = document.querySelector("#skate-container");
-//let cartCounter = document.querySelector(".nav-item span");
+let cartCounter = document.querySelector(".nav-item span");
 const shopBag = document.querySelector("#shop-bag");
+const shopcartOverlay = document.querySelector("#shopCart-overlay");
 
  const skates = [
     {
@@ -146,8 +147,8 @@ function totalCost(product) {
     let cartCost = localStorage.getItem("totalCost");
     
 
-    console.log("My cartCost is", cartCost);
-    console.log(typeof cartCost);
+    //console.log("My cartCost is", cartCost);
+    //console.log(typeof cartCost);
 
     if(cartCost != null) {
         cartCost = parseInt(cartCost);
@@ -158,6 +159,57 @@ function totalCost(product) {
 
     
 }
+onLoadCartNumbers();
+
+function displayCart () {
+    shopcartOverlay.style.visibility = "visible";
+    shopcartOverlay.style.display = "block";
+    shopcartOverlay.style.width = "90vw";
+    shopcartOverlay.style.height = "50rem";
+
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+
+    let itemNames = Object.keys(cartItems);
+
+    console.log(itemNames);
+
+    for(let i = 0; i <= itemNames.length; i++ ) {
+        shopcartOverlay.innerHTML = ``
+        shopcartOverlay.innerHTML += `
+         <p>${itemNames}</p>
+         `
+    }
+
+
+
+
+    // for (let itemNames of Object.keys((cartItems))) {
+    //     shopcartOverlay.innerHTML += `
+    //     <p>${itemNames}</p>
+    //     `
+    //     console.log(itemNames)
+    // }
+
+    // let cartItemNames = Object.keys(cartItems)[0];
+    // console.log(cartItems);
+    // console.log(cartItemNames);
+    
+}
+
+function hideCart() {
+    shopcartOverlay.style.visibility = "hidden";
+}
+
+ document.body.addEventListener("click", hideCart);
+ shopBag.addEventListener("mouseenter", displayCart)
+
+
+
+
+
+
+//shopBag.addEventListener("mouseout", hideCart)
 
 // function displayCart() {
 //     let cartItems = localStorage.getItem("productsInCart");
@@ -165,7 +217,7 @@ function totalCost(product) {
 //     console.log(carItems);
 // };
 
-onLoadCartNumbers();
+
 //displayCart();
 
 
@@ -186,8 +238,6 @@ onLoadCartNumbers();
 // }
 
 
-// shopBag.addEventListener("mouseenter", displayCart)
-//shopBag.addEventListener("mouseout", hideCart)
 
 
 
