@@ -61,6 +61,7 @@ span {
     background-color: white;
 }
 
+/* SHOPPING CART DISPLAY STYLING!!!! ----------------------*/
 #shopCart-overlay {
     background-color: lightcoral;
     /* height: 100vh;
@@ -70,11 +71,58 @@ span {
     position: fixed;
     margin: 5rem;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: scroll;
+    overflow-X: hidden;
 }
 
-#shopCart-overlay > p {
-    padding: 5px;
+
+#display-label-container {
+    font-size: 2.5rem;
+    display: flex;
+    padding-left: 1rem;
+    gap: 50rem;
+    height: 6rem;
+    border-bottom: 1px solid black;
+    overflow: hidden;
 }
+
+#display-label-container > h5 {
+    margin-bottom: 0;
+}
+
+#display-subTot-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 12rem;
+    border-top: 1px solid black;
+    width: 100%;
+}
+
+.displayCart-container {
+    display: flex;
+    padding: 1rem;
+    font-size: 2rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+#price-box {
+    position: absolute;
+    left: 62.5rem;
+}
+
+.displayCart-container > img {
+    width: 100px;
+
+}
+
+
+/* SHOPPING CART DISPLAY STYLING ENDS---------------------- */
+
 
 h1, h2 {
     text-align: center;

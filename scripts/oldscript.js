@@ -129,3 +129,7 @@ function hideCart() {
  
  //let skateName = document.querySelectorAll("h4");
 //let skateNameChoice = skateName.innerTEXT;
+
+
+
+

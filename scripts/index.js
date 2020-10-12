@@ -8,7 +8,7 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
         name: "Reidell Solaris",
         id: "product-0",
         type: "Roller Derby",
-        price: 3700,
+        price: 300,
         picUrl: "./images/solaris.png",
         descrip: "The Solaris boot from Reidell is made with cutting edge technology and design that re-defines performance and comfort standards for quad skating boots. They are comfortable, lightweight and stylish.",
       
@@ -18,7 +18,7 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
         name: "Bont Quad Star",
         id: "product-1",
         type: "Roller Derby",
-        price: 5400,
+        price: 600,
         picUrl: "./images/bontquadstar.png",
         descrip: "Brought to you from Bont, this boot featuers a a thermoplastic heel, replaceable rubber bumper toe protection, an adjustable velcro strap and rear heel loop to loop laces through.",
     
@@ -27,7 +27,7 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
         name: "Chaya Emerald Soft",
         id: "product-2",
         type: "Roller Derby",
-        price: 1400,
+        price: 150,
         picUrl: "./images/chayaemeraldsoft.jpg",
         descrip: "The perfect beginner boot that provides ventilation and extra padding for maximum comfort. It is also low cut for optimum maneurvability, and is highly durable.",
   
@@ -36,7 +36,7 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
         name: "Moxi Lolly",
         id: "product-3",
         type: "Park Skate",
-        price: 2700,
+        price: 300,
         picUrl: "./images/lolly.png",
         descrip: "Suede high top roller skates that can be used for indoor or outdoor skating. Moxi Lolly Skates are a mid-range lifestyle skate, designed for recreation and street skating.",
 
@@ -45,7 +45,7 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
         name: "Chaya Karma ",
         id: "product-4",
         type: "Park Skate",
-        price: 3500,
+        price: 380,
         picUrl: "./images/chaya.jpg", 
         descrip: "Perfect skatepark-ready skates that include Grind Blocks. The Grind Block is asymmetrical that opens up the skatepark to whole new array of tricks; further enhanced by the fact that you can choose to switch sides for added tricks and fun.",
    
@@ -54,7 +54,7 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
         name: "Custom Van Skates",
         id: "product-5",
         type: "Park Skate",
-        price: 5000,
+        price: 540,
         picUrl: "./images/vans.png",
         descrip: "Bring your shoes and let us max out your vans to make the pefect street-park-jam-whatever you wish skate. The price includes plates, wheels, toe-stops, Chicks in Bowls side blocks, and installation. It does not include the van shoes.",
         
@@ -111,8 +111,10 @@ function addProductToCart(event) {
     //Here, I am making the cartCounter span which is next to the shopping bag equal the length of the cart, which would show how many items have been selected.
     cartCounter.innerText = cart.length;
 
-}
+    //Here I was checking that the price value is a number and that it picks up the price. 
+   //console.log(typeof product.price);
 
+}
 
 
 //Here I am using a .forEach method on the (node)list of buttons that I have created. 
@@ -125,19 +127,59 @@ buttons.forEach(button => {
 });
 
 
+//Here, I am creating a function to display the contents of the shopping cart/the products the user has selected. This is originally an empty DIV I have in the HTML which I have targeted in JS and made a reference to it. The div has some styling in CSS, although most of it is below. 
+//So, first I have statements saying what it is going to look like when the funciton runs. 
+//Then, I use the .forEach method on the cart array and I say that for each item in the cart, the innterHTML of my cartDisplay will look like so and so. 
 function displayCart() {
     shopcartOverlay.style.visibility = "visible";
-    shopcartOverlay.style.display = "block";
     shopcartOverlay.style.width = "90vw";
     shopcartOverlay.style.height = "50rem";
 
+    let displayLabel = document.createElement("div");
+    let displaySubTotal = document.createElement("div");
+
+    shopcartOverlay.appendChild(displayLabel);
+    displayLabel.id = "display-label-container";
+
+
+     displayLabel.innerHTML += `
+    <h5>PRODUCTS</h5>
+    <h5>PRICE</h5>
+    <h5>TOTAL</h5>
+     `
+
     cart.forEach((item) => {
+        //TRYING TO FIGURE OUT HOW TO MAKE THE PRICES ADD UP
+        // for (i = 0; i < cart.length; i++) {
+        //     let itemPrice = item.price[i];
+        //     console.log(itemPrice);
+        // }
+
         //console.log(item.name)
+        // let itemPrice = item.price;
+        // console.log(itemPrice);
+
+        // let itemTotalPrice = itemPrice + itemPrice;
+        // console.log(itemTotalPrice);
+
         shopcartOverlay.innerHTML += `
-        <p>${item.name}</p>`
+        <div class="displayCart-container" >
+        <img src=${item.picUrl}>
+        <h5>${item.name}</h5>
+        <h5 id="price-box">$${item.price}.00</h5>
+        `
+
     });
     
+    shopcartOverlay.innerHTML += `
+    <div id="display-subTot-container">
+    <p>Subtotal Here</p>
+    </div>
+    `
+
 }
+
+//To hide the cart, I have made a function that if you click outside, it will disappear. The first statement empty the innerHTML of the cart so that items do not repeat themselves.
 
 function hideCart() {
     shopcartOverlay.innerHTML = ""
@@ -145,13 +187,12 @@ function hideCart() {
 }
 
 
+//Here, there are eventlisteners for my cartDisplay functions. 
 shopBag.addEventListener("mouseover", displayCart)
 document.body.addEventListener("click", hideCart)
 
 
-
-
-
+//TO ADD CART ITEMS TOGETHER YOU CAN TRY A .FOREACH, a LOOP AND EITHER INSIDE THE DISPLAY CART FUNCTION OR MAYBE MAKE A SEPEARTE FUNCTION AND CALL IT LATER...
 
 
 
