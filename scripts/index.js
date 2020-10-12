@@ -1,74 +1,76 @@
 const skateContainer = document.querySelector("#skate-container");
-let cartCounter = document.querySelector(".nav-item span");
-const shopBag = document.querySelector("#shop-bag");
-const shopcartOverlay = document.querySelector("#shopCart-overlay");
 
  const skates = [
     {
         name: "Reidell Solaris",
+        id: "product-0",
         type: "Roller Derby",
         price: 3700,
         picUrl: "./images/solaris.png",
         descrip: "The Solaris boot from Reidell is made with cutting edge technology and design that re-defines performance and comfort standards for quad skating boots. They are comfortable, lightweight and stylish.",
-        inCart: 0
+      
 
     },
     {
         name: "Bont Quad Star",
+        id: "product-1",
         type: "Roller Derby",
         price: 5400,
         picUrl: "./images/bontquadstar.png",
         descrip: "Brought to you from Bont, this boot featuers a a thermoplastic heel, replaceable rubber bumper toe protection, an adjustable velcro strap and rear heel loop to loop laces through.",
-        inCart: 0
+    
     },
     {
         name: "Chaya Emerald Soft",
+        id: "product-2",
         type: "Roller Derby",
         price: 1400,
         picUrl: "./images/chayaemeraldsoft.jpg",
         descrip: "The perfect beginner boot that provides ventilation and extra padding for maximum comfort. It is also low cut for optimum maneurvability, and is highly durable.",
-        inCart: 0
+  
     },
     {
         name: "Moxi Lolly",
+        id: "product-3",
         type: "Park Skate",
         price: 2700,
         picUrl: "./images/lolly.png",
         descrip: "Suede high top roller skates that can be used for indoor or outdoor skating. Moxi Lolly Skates are a mid-range lifestyle skate, designed for recreation and street skating.",
-        inCart: 0
+
     },
     {
         name: "Chaya Karma ",
+        id: "product-4",
         type: "Park Skate",
         price: 3500,
         picUrl: "./images/chaya.jpg", 
         descrip: "Perfect skatepark-ready skates that include Grind Blocks. The Grind Block is asymmetrical that opens up the skatepark to whole new array of tricks; further enhanced by the fact that you can choose to switch sides for added tricks and fun.",
-        inCart: 0
+   
     },
     {
         name: "Custom Van Skates",
+        id: "product-5",
         type: "Park Skate",
         price: 5000,
         picUrl: "./images/vans.png",
         descrip: "Bring your shoes and let us max out your vans to make the pefect street-park-jam-whatever you wish skate. The price includes plates, wheels, toe-stops, Chicks in Bowls side blocks, and installation. It does not include the van shoes.",
-        inCart: 0
+        
     },
 
 ];
 
-//let key = "";
-//let value = "";
+const cart = [];
 
 let skatesToString = JSON.stringify(skates);
 
 localStorage.setItem("skates", skatesToString);
 
-//localStorage.setItem(key, value);
-//let localValue = localStorage.getItem(key);
-
 let storedSkates = JSON.parse(localStorage.getItem("skates"));
 
-storedSkates.forEach(skate => {
+
+//the i inside ((skate, i)) creates an index number that I have attached to each button.
+
+storedSkates.forEach((skate, i)=> {
     skateContainer.innerHTML += `
     <article class="skate-box">
     <img src=${skate.picUrl}>
@@ -76,166 +78,12 @@ storedSkates.forEach(skate => {
     <p class="type-box">Type: ${skate.type}</p>
     <p class="price-box">Price: ${skate.price}</p>
     </div>
-    <button class="buy-btn">Select</button>
+    <button id="product-${i}" class="buy-btn">Select</button>
     </article>
     `
 });
 
-//let skateName = document.querySelectorAll("h4");
-//let skateNameChoice = skateName.innerTEXT;
-
-
-let buyBTN = document.querySelectorAll(".buy-btn");
-
-//console.log(skateName[1]);
-
-for (let i = 0; i < buyBTN.length; i++) {
-    buyBTN[i].addEventListener("click", () => {
-        //console.log("added to cart");
-        cartNumbers(skates[i]);
-        totalCost(skates[i])
-    }) 
-}
-
-function onLoadCartNumbers() {
-    let productNumbers = localStorage.getItem("cartNumbers");
-
-    if(productNumbers)  {
-        document.querySelector(".nav-item span").textContent = productNumbers;
-    }
-}
-
-function cartNumbers(skate) {
-    let productNumbers = localStorage.getItem("cartNumbers");
-
-    productNumbers = parseInt(productNumbers);
-
-    if( productNumbers ) {
-        localStorage.setItem("cartNumbers", productNumbers + 1);
-        document.querySelector(".nav-item span").textContent = productNumbers + 1;
-    } else {
-        localStorage.setItem("cartNumbers", 1);
-        document.querySelector(".nav-item span").textContent = 1;
-    }
-    
-    setItems(skate);
-}
-
-function setItems(skate) {
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
-
-    if(cartItems != null) {
-        if(cartItems[skate.name] == undefined) {
-            cartItems = {
-                ...cartItems,
-                [skate.name]: skate
-            }
-        }
-        cartItems[skate.name].inCart += 1;
-    } else {
-        skate.inCart = 1;
-        cartItems = {
-            [skate.name]: skate
-        }
-    }
-    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
-}
-
-function totalCost(product) {
-    //console.log("The product price is", product.price, "of", product.name);
-    let cartCost = localStorage.getItem("totalCost");
-    
-
-    //console.log("My cartCost is", cartCost);
-    //console.log(typeof cartCost);
-
-    if(cartCost != null) {
-        cartCost = parseInt(cartCost);
-        localStorage.setItem("totalCost", cartCost + product.price);
-    } else {
-        localStorage.setItem("totalCost", product.price);
-    }
-
-    
-}
-onLoadCartNumbers();
-
-function displayCart () {
-    shopcartOverlay.style.visibility = "visible";
-    shopcartOverlay.style.display = "block";
-    shopcartOverlay.style.width = "90vw";
-    shopcartOverlay.style.height = "50rem";
-
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
-
-    let itemNames = Object.keys(cartItems);
-
-    console.log(itemNames);
-
-    for(let i = 0; i <= itemNames.length; i++ ) {
-        shopcartOverlay.innerHTML = ``
-        shopcartOverlay.innerHTML += `
-         <p>${itemNames}</p>
-         `
-    }
-
-
-
-
-    // for (let itemNames of Object.keys((cartItems))) {
-    //     shopcartOverlay.innerHTML += `
-    //     <p>${itemNames}</p>
-    //     `
-    //     console.log(itemNames)
-    // }
-
-    // let cartItemNames = Object.keys(cartItems)[0];
-    // console.log(cartItems);
-    // console.log(cartItemNames);
-    
-}
-
-function hideCart() {
-    shopcartOverlay.style.visibility = "hidden";
-}
-
- document.body.addEventListener("click", hideCart);
- shopBag.addEventListener("mouseenter", displayCart)
-
-
-
-
-
-
-//shopBag.addEventListener("mouseout", hideCart)
-
-// function displayCart() {
-//     let cartItems = localStorage.getItem("productsInCart");
-//     cartItems = JSON.parse(carItems);
-//     console.log(carItems);
-// };
-
-
-//displayCart();
-
-
-//console.log(shopBag);
-
-// function displayCart() {
-//     document.body.innerHTML += `<div id="cart-container">test test </div>`
-//     let cartContainer = document.querySelector("#cart-container");
-    //shopBag.style.backgroundColor = "blue";
-
-//}
-
-// function hideCart() {
-//     let cartContainer = document.querySelector("#cart-container");
-//     cartContainer.display = "none";
-//     //shopBag.style.backgroundColor = "white";
-
-// }
+let buttons = document.querySelectorAll("button");
 
 
 
@@ -243,6 +91,30 @@ function hideCart() {
 
 
 
+
+
+// const BTN1 = document.querySelector("#btn1") 
+// const BTN2 = document.querySelector("#btn2") 
+// const BTN3 = document.querySelector("#btn3") 
+// const BTN4 = document.querySelector("#btn4") 
+// const BTN5 = document.querySelector("#btn5") 
+
+//  function selectToCart() {
+     
+//  }
+
+
+// BTN0.addEventListener("click", selectToCart);
+
+
+
+
+// let BTN3 = document.querySelector("#btn3");
+
+// let BUTTONS = document.querySelectorAll(".buy-btn");
+// console.log(BTN3);
+
+// console.log(BUTTONS);
 
 
 
@@ -369,3 +241,28 @@ function hideCart() {
 //let skatesToString = JSON.stringify(skates);
 
 //localStorage.setItem("skates", skatesToString);
+
+
+
+
+
+
+//FOR MANY BUTTONS -----------------------
+
+// 1)Make references to the buttons
+//Example:  let btn1 =...., let btn2=....., let btn3-----
+// 2) ADD EVENT LISTENERS FOR EACH
+// example
+
+
+// function myFunction(eventt) {
+//     console.log(event.target.id);
+// }
+
+//YOU CAN DO .forEACH on nodelists!!! 
+
+//buttons.forEach(function(el, index){
+
+//});
+
+//dont need parantheses if you have only 1 element.
