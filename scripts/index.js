@@ -63,6 +63,7 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
 ];
 
 let cart = [];
+let prices = []
 
 let skatesToString = JSON.stringify(skates);
 
@@ -108,11 +109,25 @@ function addProductToCart(event) {
     //Here, I ampushing the product into the cart array.
     cart.push(product);
 
+    let productPrice = product.price;
+
+    //console.log(product.price)
+
+    prices.push(product.price);
+
+    // let sum = prices.reduce(function (a,b) {
+    //     return a + b;
+    // }, 0);
+
+    //console.log(product.price);
+
+    //  for (let i = 0; i < cart.length; i++) {
+    //     let sum = product.price[i];
+    //     console.log(sum);
+    //  }
+
     //Here, I am making the cartCounter span which is next to the shopping bag equal the length of the cart, which would show how many items have been selected.
     cartCounter.innerText = cart.length;
-
-    //Here I was checking that the price value is a number and that it picks up the price. 
-   //console.log(typeof product.price);
 
 }
 
@@ -141,12 +156,15 @@ function displayCart() {
     shopcartOverlay.appendChild(displayLabel);
     displayLabel.id = "display-label-container";
 
-
-     displayLabel.innerHTML += `
+    displayLabel.innerHTML += `
     <h5>PRODUCTS</h5>
     <h5>PRICE</h5>
     <h5>TOTAL</h5>
      `
+    let sum = prices.reduce(function (a,b) {
+        return a + b;
+    }, 0);
+
 
     cart.forEach((item) => {
         //TRYING TO FIGURE OUT HOW TO MAKE THE PRICES ADD UP
@@ -168,16 +186,20 @@ function displayCart() {
         <h5>${item.name}</h5>
         <h5 id="price-box">$${item.price}.00</h5>
         `
-
+       
     });
+
+    
     
     shopcartOverlay.innerHTML += `
     <div id="display-subTot-container">
-    <p>Subtotal Here</p>
+    <p>Subtotal is: $${sum}.00</p>
     </div>
     `
 
+
 }
+
 
 //To hide the cart, I have made a function that if you click outside, it will disappear. The first statement empty the innerHTML of the cart so that items do not repeat themselves.
 

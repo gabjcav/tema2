@@ -133,3 +133,7 @@ function hideCart() {
 
 
 
+//TIPS FROM OTHER STUDENTS
+     //define the total sum (that is adding the prices of every item in the cart.) outside of the .forEach loop 
+     //inside the .forEach, add totalSum += item.price.
+     //then just add the price totals. 
