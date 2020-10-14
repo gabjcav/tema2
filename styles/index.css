@@ -82,8 +82,10 @@ span {
 #display-label-container {
     font-size: 2.5rem;
     display: flex;
+    justify-content: space-between;
     padding-left: 1rem;
-    gap: 50rem;
+    padding-right: 5rem;
+    /* gap: 20rem; */
     height: 6rem;
     border-bottom: 1px solid black;
     overflow: hidden;
@@ -97,7 +99,7 @@ span {
     overflow: hidden;
     display: flex;
     flex-direction: row-reverse;
-    padding-right: 12rem;
+    padding-right: 5rem;
     border-top: 1px solid black;
     width: 100%;
 }
@@ -110,13 +112,26 @@ span {
     overflow: hidden;
 }
 
+ .deleteButton {
+    background-color: #333;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
 #price-box {
-    position: absolute;
-    left: 62.5rem;
+position: absolute;
+left: 45rem;
 }
 
 .displayCart-container > img {
-    width: 100px;
+    width: 75px;
 
 }
 
