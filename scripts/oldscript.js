@@ -101,7 +101,8 @@ let buttons = document.querySelectorAll("button");
 //the first variable is creating a buttonID that is which button is clicked on, which is picking up the id I gave the button in HTML.
 //the second variable is having a value that is finding the element in my skates array equal to which button is pressed, so that they match.
 //In the second variable, the word after .find (which is "el") can be any word. It is just referring to the element/item/thing in the array. Then the .id in el.id is finding the key name that I want to find. 
-
+//The first variable is targeting and capturing the id of what element the event is being performed on/
+//It is a target event property that returns an element that triggered the event.
 function addProductToCart(event) {
     let buttonID = event.target.id;
     //console.log(buttonID);

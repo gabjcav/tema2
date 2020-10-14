@@ -72,9 +72,6 @@ localStorage.setItem("skates", skatesToString);
 
 let storedSkates = JSON.parse(localStorage.getItem("skates"));
 
-
-//the i inside ((skate, i)) creates an index number that I have attached to each button. It does this because it is a .forEach method. 
-
 storedSkates.forEach((skate, i)=> {
     skateContainer.innerHTML += `
     <article class="skate-box">
@@ -90,8 +87,6 @@ storedSkates.forEach((skate, i)=> {
 
 let buttons = document.querySelectorAll("button");
 
-//The first variable is targeting and capturing the id of what element the event is being performed on/
-//It is a target event property that returns an element that triggered the event.
 
 function addProductToCart(event) {
     let buttonID = event.target.id;
@@ -106,7 +101,6 @@ function addProductToCart(event) {
 }
 
 buttons.forEach(button => { button.addEventListener("click", addProductToCart) } );
-
 
 
 function displayCart() {
