@@ -147,16 +147,22 @@ function displayCart() {
     let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
     console.log(deleteButtons)
 
-    deleteButtons.forEach(button => {
-        button.addEventListener("mouseover", changeStuff)
-    });
-
-    function changeStuff() {
-        shopcartOverlay.style.backgroundColor = "yellow";
+    function removeFromCart(event) {
+        let buttonName = event.target.dataset.name
+        for (let i = 0; i < cart.length; i+= 1) {
+            if(cart[i].name === buttonName) {
+                cart.splice(i, 1)
+                console.log(cart);
+            }
+        }
     }
 
-}
+    deleteButtons.forEach(button => {
+        button.addEventListener("mouseover", removeFromCart)
+    });
 
+
+}
 
 function hideCart() {
     shopcartOverlay.innerHTML = ""
@@ -166,4 +172,6 @@ function hideCart() {
 
 shopBag.addEventListener("mouseover", displayCart)
 document.body.addEventListener("click", hideCart)
+
+
 
