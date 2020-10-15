@@ -25,15 +25,10 @@ function updateCart() {
     let counter = 0;
     cart.forEach(item => {counter += item.qty});
     cartCounter.innerText = counter;
-
-    let displayCart_Container = document.createElement("div");
-    displayCart_Container.class = "displayCart-container";
     let sum = 0
 
-   shopcartOverlay.appendChild(displayCart_Container)
-
    cart.forEach((item) => {
-       displayCart_Container.innerHTML +=  `
+       shopcartOverlay.innerHTML +=  `
        <div class="displayItem-container">
        <img src=${item.picUrl}>
        <div class="deleteButton" data-name="${item.name}">X</div>
