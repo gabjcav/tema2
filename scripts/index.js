@@ -64,7 +64,6 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
 ];
 
 let cart = [];
-let prices = []
 
 let skatesToString = JSON.stringify(skates);
 
@@ -94,13 +93,39 @@ function addProductToCart(event) {
 
     cart.push(product);
 
-    prices.push(product.price);
 
-    cartCounter.innerText = cart.length;
+    updateCart()
 
 }
 
 buttons.forEach(button => { button.addEventListener("click", addProductToCart) } );
+
+
+function updateCart() {
+    cartCounter.innerText = cart.length;
+    let displayCart_Container = document.createElement("div");
+    let sum = 0
+
+
+   shopcartOverlay.appendChild(displayCart_Container)
+
+   cart.forEach((item) => {
+       displayCart_Container.innerHTML +=  `
+       <div class="displayCart-container" >
+       <img src=${item.picUrl}>
+       <div class="deleteButton" data-name="${item.name}">X</div>
+       <h5>${item.name}</h5>
+       <h5 id="price-box">$${item.price}.00</h5>
+       `;
+       sum += item.price
+   });
+
+   shopcartOverlay.innerHTML += `
+   <div id="display-subTot-container">
+   <p>Subtotal is: $${sum}.00</p>
+   </div>
+   `
+}
 
 
 function displayCart() {
@@ -118,25 +143,7 @@ function displayCart() {
     <h5>PRICE</h5>
     <h5>TOTAL</h5>
      `
-    let sum = prices.reduce(function (a,b) {
-        return a + b;
-    }, 0);
-
-    cart.forEach((item) => {
-        shopcartOverlay.innerHTML += `
-        <div class="displayCart-container" >
-        <img src=${item.picUrl}>
-        <div class="deleteButton" data-name="${item.name}">X</div>
-        <h5>${item.name}</h5>
-        <h5 id="price-box">$${item.price}.00</h5>
-        `
-    });
-
-    shopcartOverlay.innerHTML += `
-    <div id="display-subTot-container">
-    <p>Subtotal is: $${sum}.00</p>
-    </div>
-    `
+     updateCart()
 
     let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
     console.log(deleteButtons)
@@ -149,12 +156,21 @@ function displayCart() {
                 console.log(cart);
             }
         }
+
+        shopcartOverlay.innerHTML = ""
+
+        displayCart()
+
+        shopcartOverlay.innerHTML += `
+        <div id="display-subTot-container">
+        <p>Subtotal is: $${sum}.00</p>
+        </div>
+        `
     }
 
     deleteButtons.forEach(button => {
-        button.addEventListener("mouseover", removeFromCart)
+        button.addEventListener("click", removeFromCart)
     });
-
 
 }
 
@@ -164,8 +180,17 @@ function hideCart() {
 }
 
 
-shopBag.addEventListener("mouseover", displayCart)
-document.body.addEventListener("click", hideCart)
+shopBag.addEventListener("click", displayCart)
+shopBag.addEventListener("mouseover", hideCart)
 
 
+
+// I NEED TO MAKE A FUNCION THAT UPDATES THE CART BEFORE YOU ACTUALLY OPEN IT. !! DONE !!
+// I NEED TO CHANGE THE EVENT HANDLER FOR CLOSING THE CART AND THE REMOVE ITEM BUTTON !!DONE !!
+// I NEED TO MAKE SURE THE CALCULATOR IS WORKING--- IS THERE ANOTHER WAY TO GET THE PRICES BESIDES USING THE ARRAY? BECAUSE THAT COULD BE PROBLEMATIC
+
+// MAKE SURE THINGS ARE RESPONSIVE
+// CHECK THE UNIVERSALUTFORMING STUFF
+// ORGANIZE SHEETS
+// EXTRA STUFF:: BURGER BAR, MORE PRODUCTS, ANIMATIONS, COLORS? 
 

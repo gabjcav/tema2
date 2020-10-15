@@ -467,3 +467,84 @@ function hideCart() {
      //define the total sum (that is adding the prices of every item in the cart.) outside of the .forEach loop 
      //inside the .forEach, add totalSum += item.price.
      //then just add the price totals. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     function updateCart() {
+         let displayCart_Container = document.createElement("div");
+         let sum = prices.reduce(function (a,b) {return a + b;}, 0);
+
+        shopcartOverlay.appendChild(displayCart_Container)
+
+        cart.forEach((item) => {
+            displayCart_Container.innerHTML +=  `
+            <div class="displayCart-container" >
+            <img src=${item.picUrl}>
+            <div class="deleteButton" data-name="${item.name}">X</div>
+            <h5>${item.name}</h5>
+            <h5 id="price-box">$${item.price}.00</h5>
+            `
+        });
+
+        shopcartOverlay.innerHTML += `
+        <div id="display-subTot-container">
+        <p>Subtotal is: $${sum}.00</p>
+        </div>
+        `
+        // let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
+        // console.log(deleteButtons)
+
+        // function removeFromCart(event) {
+        //     let buttonName = event.target.dataset.name
+        //     for (let i = 0; i < cart.length; i+= 1) {
+        //         if(cart[i].name === buttonName) {
+        //             cart.splice(i, 1)
+        //             console.log(cart);
+        //         }
+        //     }
+    
+        //     shopcartOverlay.innerHTML = ""
+            
+        //     cart.forEach((item) => {
+        //         shopcartOverlay.innerHTML += `
+        //         <div class="displayCart-container">
+        //         <img src=${item.picUrl}>
+        //         <div class="deleteButton" data-name="${item.name}">X</div>
+        //         <h5>${item.name}</h5>
+        //         <h5 id="price-box">$${item.price}.00</h5>
+        //         `
+        //     });
+
+        //     shopcartOverlay.innerHTML += `
+        //     <div id="display-subTot-container">
+        //     <p>Subtotal is: $${sum}.00</p>
+        //     </div>
+        //     `
+
+        // }
+    
+        // deleteButtons.forEach(button => {button.addEventListener("click", removeFromCart)});
+
+        
+     }
