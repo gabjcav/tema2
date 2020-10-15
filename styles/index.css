@@ -125,9 +125,19 @@ span {
     color: white;
 }
 
-#price-box {
+.price-box {
 position: absolute;
-left: 65.5rem;
+left: 45rem;
+}
+
+.qty-box {
+position: absolute;
+left: 88rem;
+}
+
+.totalPrice-box {
+position: absolute;
+right: 7rem;
 }
 
 .displayCart-container > img {

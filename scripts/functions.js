@@ -5,8 +5,16 @@
 function addProductToCart(event) {
     let buttonID = event.target.id;
     let product = skates.find(el => el.id === buttonID);
+   
+    if(product.qty === 0) {
+        product.qty++
+        cart.push(product);
+       
+    } else {
+        product.qty++
+    
+    }
 
-    cart.push(product);
 
 
     updateCart()
@@ -14,7 +22,10 @@ function addProductToCart(event) {
 
 //HERE IS MY UPDATE CART FUNCTION--------------------------------------------
 function updateCart() {
-    cartCounter.innerText = cart.length;
+    let counter = 0;
+    cart.forEach(item => {counter += item.qty});
+    cartCounter.innerText = counter;
+
     let displayCart_Container = document.createElement("div");
     let sum = 0
 
@@ -27,9 +38,12 @@ function updateCart() {
        <img src=${item.picUrl}>
        <div class="deleteButton" data-name="${item.name}">X</div>
        <h5>${item.name}</h5>
-       <h5 id="price-box">$${item.price}.00</h5>
+       <h5 class="price-box">$${item.price}.00</h5>
+       <h5 class="qty-box">${item.qty}</h5>
+       <h5 class="totalPrice-box">${item.price * item.qty}</h5>
        `;
-       sum += item.price
+
+       sum += item.price * item.qty
    });
 
    shopcartOverlay.innerHTML += `
@@ -53,6 +67,7 @@ function displayCart() {
     displayLabel.innerHTML += `
     <h5>PRODUCTS</h5>
     <h5>PRICE</h5>
+    <h5>QUANTITY</h5>
     <h5>TOTAL</h5>
      `
      updateCart()
@@ -69,19 +84,12 @@ function removeFromCart(event) {
     for (let i = 0; i < cart.length; i+= 1) {
         if(cart[i].name === buttonName) {
             cart.splice(i, 1)
-            console.log(cart);
         }
     }
 
     shopcartOverlay.innerHTML = ""
 
     displayCart()
-
-    shopcartOverlay.innerHTML += `
-    <div id="display-subTot-container">
-    <p>Subtotal is: $${sum}.00</p>
-    </div>
-    `
 }
 
 //HERE IS MY HIDECART FUNCTION--------------------------------------------------
