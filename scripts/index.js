@@ -95,7 +95,6 @@ function addProductToCart(event) {
 
 
     updateCart()
-
 }
 
 buttons.forEach(button => { button.addEventListener("click", addProductToCart) } );
@@ -125,13 +124,14 @@ function updateCart() {
    <p>Subtotal is: $${sum}.00</p>
    </div>
    `
+    
 }
 
 
 function displayCart() {
     shopcartOverlay.style.visibility = "visible";
     shopcartOverlay.style.width = "90vw";
-    shopcartOverlay.style.height = "50rem";
+    shopcartOverlay.style.height = "auto";
 
     let displayLabel = document.createElement("div");
 
@@ -145,33 +145,29 @@ function displayCart() {
      `
      updateCart()
 
-    let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
-    console.log(deleteButtons)
+     let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
+     deleteButtons.forEach(button => {button.addEventListener("click", removeFromCart)
+     });
+}
 
-    function removeFromCart(event) {
-        let buttonName = event.target.dataset.name
-        for (let i = 0; i < cart.length; i+= 1) {
-            if(cart[i].name === buttonName) {
-                cart.splice(i, 1)
-                console.log(cart);
-            }
+function removeFromCart(event) {
+    let buttonName = event.target.dataset.name
+    for (let i = 0; i < cart.length; i+= 1) {
+        if(cart[i].name === buttonName) {
+            cart.splice(i, 1)
+            console.log(cart);
         }
-
-        shopcartOverlay.innerHTML = ""
-
-        displayCart()
-
-        shopcartOverlay.innerHTML += `
-        <div id="display-subTot-container">
-        <p>Subtotal is: $${sum}.00</p>
-        </div>
-        `
     }
 
-    deleteButtons.forEach(button => {
-        button.addEventListener("click", removeFromCart)
-    });
+    shopcartOverlay.innerHTML = ""
 
+    displayCart()
+
+    shopcartOverlay.innerHTML += `
+    <div id="display-subTot-container">
+    <p>Subtotal is: $${sum}.00</p>
+    </div>
+    `
 }
 
 function hideCart() {
@@ -183,14 +179,5 @@ function hideCart() {
 shopBag.addEventListener("click", displayCart)
 shopBag.addEventListener("mouseover", hideCart)
 
-
-
-// I NEED TO MAKE A FUNCION THAT UPDATES THE CART BEFORE YOU ACTUALLY OPEN IT. !! DONE !!
-// I NEED TO CHANGE THE EVENT HANDLER FOR CLOSING THE CART AND THE REMOVE ITEM BUTTON !!DONE !!
-// I NEED TO MAKE SURE THE CALCULATOR IS WORKING--- IS THERE ANOTHER WAY TO GET THE PRICES BESIDES USING THE ARRAY? BECAUSE THAT COULD BE PROBLEMATIC
-
-// MAKE SURE THINGS ARE RESPONSIVE
-// CHECK THE UNIVERSALUTFORMING STUFF
-// ORGANIZE SHEETS
-// EXTRA STUFF:: BURGER BAR, MORE PRODUCTS, ANIMATIONS, COLORS? 
+//LOOK INTO EVENT BUBBLING
 
