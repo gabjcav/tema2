@@ -4,8 +4,8 @@
 //HERE IS MY ADD TO CART FUNCTION ----------------------------------------
 function addProductToCart(event) {
 
-    let buttonID = event.target.id;
-    let product = skates.find(el => el.id === buttonID);
+    let buttonName = event.target.dataset.name;
+    let product = skates.find(el => el.name === buttonName);
 
     if(product.qty === 0) {
         product.qty++
@@ -21,7 +21,6 @@ function addProductToCart(event) {
 
 //HERE IS MY UPDATE CART FUNCTION--------------------------------------------
 function updateCart() {
-
     let counter = 0;
     cart.forEach(item => {counter += item.qty});
     cartCounter.innerText = counter;
@@ -33,7 +32,7 @@ function updateCart() {
        <div class="name-box"> 
        <img src=${item.picUrl}><h5>${item.name}</h5><div class="deleteButton" data-name="${item.name}">X</div></div>
        <div class="price-box">$${item.price}.00</div>
-       <div class="qty-box"><i class="fas fa-angle-down"></i>${item.qty}<i class="fas fa-angle-up"></i></div>
+       <div class="qty-box"><i class="fas fa-angle-down"></i>${item.qty}<i class="fas fa-angle-up" data-name="${item.name}"></i></div>
        <div class="totalPrice-box">$${item.price * item.qty}.00</div>
        </div>
        `;
@@ -70,7 +69,8 @@ function displayCart() {
      deleteButtons.forEach(button => {button.addEventListener("click", removeFromCart)});
 
      let addUp = document.querySelectorAll(".fa-angle-up")
-     console.log(addUp);
+     //console.log(addUp);
+     addUp.forEach(button =>{button.addEventListener("click", addProductToCart)});
 }
 
 
@@ -88,13 +88,11 @@ function removeFromCart(event) {
     displayCart()
 }
 
-//HERE WILL BE BY ADD MORE TO QUANTITY BUTTON-----------------------------------------
-// function addMore(event) {}
-
-
-
 //HERE IS MY HIDECART FUNCTION--------------------------------------------------
 function hideCart() {
     shopcartOverlay.innerHTML = ""
     shopcartOverlay.style.visibility = "hidden";
 }
+
+function addMore(event) {}
+  
