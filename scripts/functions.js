@@ -33,7 +33,7 @@ function updateCart() {
        <div class="name-box"> 
        <img src=${item.picUrl}><h5>${item.name}</h5><div class="deleteButton" data-name="${item.name}">X</div></div>
        <div class="price-box">$${item.price}.00</div>
-       <div class="qty-box">${item.qty}</div>
+       <div class="qty-box"><i class="fas fa-angle-down"></i>${item.qty}<i class="fas fa-angle-up"></i></div>
        <div class="totalPrice-box">$${item.price * item.qty}.00</div>
        </div>
        `;
