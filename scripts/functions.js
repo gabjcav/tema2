@@ -51,7 +51,6 @@ function updateCart() {
 //HERE IS MY DISPLAY CART FUNCTION---------------------------------------------
 function displayCart() {
     shopcartOverlay.style.visibility = "visible";
-    shopcartOverlay.style.width = "90vw";
     shopcartOverlay.style.height = "auto";
 
     let displayLabel = document.createElement("div");
