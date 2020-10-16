@@ -26,16 +26,15 @@ function updateCart() {
     cart.forEach(item => {counter += item.qty});
     cartCounter.innerText = counter;
     let sum = 0
-
+// <div class="deleteButton" data-name="${item.name}">X</div>
    cart.forEach((item) => {
        shopcartOverlay.innerHTML +=  `
        <div class="displayItem-container">
-       <img src=${item.picUrl}>
-       <div class="deleteButton" data-name="${item.name}">X</div>
-       <h5>${item.name}</h5>
-       <h5 class="price-box">$${item.price}.00</h5>
-       <h5 class="qty-box">${item.qty}</h5>
-       <h5 class="totalPrice-box">${item.price * item.qty}</h5>
+       <div class="name-box"> 
+       <img src=${item.picUrl}><h5>${item.name}</h5><div class="deleteButton" data-name="${item.name}">X</div></div>
+       <div class="price-box">$${item.price}.00</div>
+       <div class="qty-box">${item.qty}</div>
+       <div class="totalPrice-box">$${item.price * item.qty}.00</div>
        </div>
        `;
 

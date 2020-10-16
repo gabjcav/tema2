@@ -67,10 +67,8 @@ span {
     z-index: 9;
     visibility: hidden;
     position: fixed;
-    margin: 5rem;
+    margin: 6rem;
     border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
     overflow: hidden;
     overflow-X: hidden;
@@ -78,41 +76,56 @@ span {
 
 
 #display-label-container {
-    font-size: 2rem;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 5rem;
-    height: 6rem;
+    font-size: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+    height: 7rem;
     border-bottom: 1px solid black;
     overflow: hidden;
+    letter-spacing: .5rem;
 }
 
 #display-label-container > h5 {
     margin-bottom: 0;
 }
 
-#display-subTot-container {
-    overflow: hidden;
-    display: flex;
-    flex-direction: row-reverse;
-    padding: .5rem 5rem 0 0;
-    border-top: 1px solid black;
-    width: 100%;
-    height: 4rem;
-}
-
 .displayItem-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
-    font-size: 2rem;
-    gap: 1rem;
+    /* display: flex;
+    justify-content: space-evenly; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    padding: .5rem;
+    font-size: 1.5rem;
     overflow: hidden;
+    position: relative;
+    height: 115px;
+
 }
 
+ .name-box {
+     grid-column: 1;
+     display: flex;
+     gap: 5rem;
+     font-size: 2rem;
+     overflow: hidden;
+     
+}
 
- .deleteButton {
+.name-box > h5 {
+    width: 100px;
+    align-self: flex-start;
+}
+
+.name-box > img {
+    /* position: absolute;
+    left: 1rem; */
+    width: 100px;
+}
+
+.deleteButton {
+    align-self: center;
     background-color: #333;
     height: 3rem;
     width: 3rem;
@@ -123,31 +136,36 @@ span {
     justify-content: center;
     align-items: center;
     color: white;
-    /* position: absolute;
-    left: 9rem; */
 } 
 
- .price-box {
-    position: absolute;
-    left: 45rem;
+.price-box, .qty-box, .totalPrice-box {
+    font-size: 2rem;
+    align-self: center;
+}
+
+.price-box {
+    grid: 2;
 }
 
 .qty-box {
-    position: absolute;
-    left: 88rem;
+    grid: 3;
 }
 
 .totalPrice-box {
-    position: absolute;
-    right: 7rem;
+  grid: 4;
+} 
+
+#display-subTot-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: .5rem 5rem 0 0;
+    border-top: 1px solid black;
+    width: 100%;
+    height: 4rem;
+    font-weight: 600;
+  
 }
-
-.displayItem-container > img {
-    width: 75px;
-
-}
-
-
 /* SHOPPING CART DISPLAY STYLING ENDS---------------------- */
 
 
