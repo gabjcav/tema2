@@ -24,9 +24,6 @@ buttons.forEach(button => { button.addEventListener("click", addProductToCart) }
 shopBag.addEventListener("click", displayCart)
 shopBag.addEventListener("mouseover", hideCart)
 
-// TO MAKE A QUANTITY COUNTER/ADJUSTER:
-// ADD QUANTITY AS A PROPERTY TO EACH PRODUCT IN THE SKATES ARRAY AND START IT AT 0
-// THEN MAKE THE UPDATE CART THING CHECK TO SEE IF THERE IS ONE PRE-EXISTING? AND THEN ADD OR SOMETHING.....
 
 
 

@@ -26,7 +26,7 @@ function updateCart() {
     cart.forEach(item => {counter += item.qty});
     cartCounter.innerText = counter;
     let sum = 0
-// <div class="deleteButton" data-name="${item.name}">X</div>
+
    cart.forEach((item) => {
        shopcartOverlay.innerHTML +=  `
        <div class="displayItem-container">
@@ -67,8 +67,10 @@ function displayCart() {
      updateCart()
 
      let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
-     deleteButtons.forEach(button => {button.addEventListener("click", removeFromCart)
-     });
+     deleteButtons.forEach(button => {button.addEventListener("click", removeFromCart)});
+
+     let addUp = document.querySelectorAll(".fa-angle-up")
+     console.log(addUp);
 }
 
 
@@ -85,6 +87,11 @@ function removeFromCart(event) {
 
     displayCart()
 }
+
+//HERE WILL BE BY ADD MORE TO QUANTITY BUTTON-----------------------------------------
+// function addMore(event) {}
+
+
 
 //HERE IS MY HIDECART FUNCTION--------------------------------------------------
 function hideCart() {
