@@ -2,6 +2,7 @@
 
 
 //HERE IS MY ADD TO CART FUNCTION ----------------------------------------
+//Here 
 function addProductToCart(event) {
 
     let buttonName = event.target.dataset.name;

@@ -12,7 +12,7 @@ storedSkates.forEach((skate, i)=> {
     <p class="type-box">Type: ${skate.type}</p>
     <p class="price-box">Price: ${skate.price}</p>
     </div>
-    <button id="product-${i}" data-name="${skate.name}" class="buy-btn">Select</button>
+    <button data-name="${skate.name}" class="buy-btn">Select</button>
     </article>
     `
 });
