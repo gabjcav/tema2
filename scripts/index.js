@@ -3,7 +3,6 @@ const cartCounter = document.querySelector("span")
 const shopBag = document.querySelector("#shop-bag");
 const shopcartOverlay = document.querySelector("#shopCart-overlay");
 
-
 storedSkates.forEach((skate, i)=> {
     skateContainer.innerHTML += `
     <article class="skate-box">
@@ -22,7 +21,7 @@ let buttons = document.querySelectorAll("button");
 buttons.forEach(button => { button.addEventListener("click", addProductToCart) } );
 
 shopBag.addEventListener("click", displayCart)
-shopBag.addEventListener("mouseover", hideCart)
+shopBag.addEventListener("mouseover", hideCart);
 
 
 

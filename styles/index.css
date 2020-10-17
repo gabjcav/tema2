@@ -64,15 +64,16 @@ span {
 /* SHOPPING CART DISPLAY STYLING!!!! ----------------------*/
 #shopCart-overlay {
     width: 90vw;
-    background-color: lightcoral;
+    background-color: lightgrey;
     z-index: 9;
     visibility: hidden;
     position: fixed;
     margin: 6rem;
     border-radius: 1rem;
     gap: 1rem;
-    overflow: hidden;
-    overflow-X: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
+    
 }
 
 
@@ -85,6 +86,7 @@ span {
     border-bottom: 1px solid black;
     overflow: hidden;
     letter-spacing: .5rem;
+    position: relative;
 }
 
 #display-label-container > h5 {

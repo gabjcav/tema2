@@ -1,7 +1,7 @@
 //HERE IS MY ADD TO CART FUNCTION ----------------------------------------
 
 function addProductToCart(event) {
-
+    hideCart();
     let buttonName = event.target.dataset.name;
     let product = skates.find(el => el.name === buttonName);
 
@@ -13,7 +13,7 @@ function addProductToCart(event) {
         product.qty++
 
     }
-
+  
     updateCart()
 }
 
@@ -52,6 +52,7 @@ function displayCart() {
     shopcartOverlay.style.visibility = "visible";
     shopcartOverlay.style.height = "auto";
 
+    shopBag.src = "https://cdn3.iconfinder.com/data/icons/ui-icons-5/16/cross-small-01-512.png";
     let displayLabel = document.createElement("div");
 
     shopcartOverlay.appendChild(displayLabel);
@@ -72,6 +73,8 @@ function displayCart() {
      let downArrow = document.querySelectorAll(".fa-angle-down");
      upArrow.forEach(button =>{button.addEventListener("click", addMore)});
      downArrow.forEach(button => {button.addEventListener("click", reduce)});
+
+     
 }
 
 
@@ -94,6 +97,7 @@ function removeFromCart(event) {
 function hideCart() {
     shopcartOverlay.innerHTML = ""
     shopcartOverlay.style.visibility = "hidden";
+    shopBag.src="./images/shopbag.svg";
 }
 
 //HERE IS MY ADDMORE ARROW FUNCTION -------------------------------
