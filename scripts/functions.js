@@ -1,8 +1,5 @@
-//EXPORT THIS
-
-
 //HERE IS MY ADD TO CART FUNCTION ----------------------------------------
-//Here 
+
 function addProductToCart(event) {
 
     let buttonName = event.target.dataset.name;
@@ -21,6 +18,7 @@ function addProductToCart(event) {
 }
 
 //HERE IS MY UPDATE CART FUNCTION--------------------------------------------
+
 function updateCart() {
     let counter = 0;
     cart.forEach(item => {counter += item.qty});
@@ -33,7 +31,7 @@ function updateCart() {
        <div class="name-box"> 
        <img src=${item.picUrl}><h5>${item.name}</h5><div class="deleteButton" data-name="${item.name}">X</div></div>
        <div class="price-box">$${item.price}.00</div>
-       <div class="qty-box"><i class="fas fa-angle-down"></i>${item.qty}<i class="fas fa-angle-up" data-name="${item.name}"></i></div>
+       <div class="qty-box"><i class="fas fa-angle-down" data-name="${item.name}"></i>${item.qty}<i class="fas fa-angle-up" data-name="${item.name}"></i></div>
        <div class="totalPrice-box">$${item.price * item.qty}.00</div>
        </div>
        `;
@@ -49,6 +47,7 @@ function updateCart() {
 }
 
 //HERE IS MY DISPLAY CART FUNCTION---------------------------------------------
+
 function displayCart() {
     shopcartOverlay.style.visibility = "visible";
     shopcartOverlay.style.height = "auto";
@@ -69,13 +68,15 @@ function displayCart() {
      let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
      deleteButtons.forEach(button => {button.addEventListener("click", removeFromCart)});
 
-     let addUp = document.querySelectorAll(".fa-angle-up")
-     //console.log(addUp);
-     addUp.forEach(button =>{button.addEventListener("click", addProductToCart)});
+     let upArrow = document.querySelectorAll(".fa-angle-up")
+     let downArrow = document.querySelectorAll(".fa-angle-down");
+     upArrow.forEach(button =>{button.addEventListener("click", addMore)});
+     downArrow.forEach(button => {button.addEventListener("click", reduce)});
 }
 
 
 //HERE IS MY REMOVE FROM CART FUNCTION ----------------------------------------
+
 function removeFromCart(event) {
     let buttonName = event.target.dataset.name
     for (let i = 0; i < cart.length; i+= 1) {
@@ -95,5 +96,23 @@ function hideCart() {
     shopcartOverlay.style.visibility = "hidden";
 }
 
-function addMore(event) {}
+//HERE IS MY ADDMORE ARROW FUNCTION -------------------------------
+
+function addMore(event) {
+    let upArrowName = event.target.dataset.name;
+    let product = cart.find(el => el.name === upArrowName);
+    product.qty++;
+    
+    shopcartOverlay.innerHTML = ""
+    displayCart();
+}
   
+//HERE IS MY REDUCE ARROW FUNCTION --------------------------------
+function reduce(event) {
+    let downArrowName = event.target.dataset.name;
+    let product = cart.find(el => el.name === downArrowName);
+    product.qty--;
+
+    shopcartOverlay.innerHTML = ""
+    displayCart();
+}
