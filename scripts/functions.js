@@ -124,7 +124,6 @@ function reduce(event) {
 //HERE IS MY ATTEMPT AT A SCROLL ANIMATION FUNCTION. TESTING WITH HEADER COLOR FIRST
 
 function onScroll() {
-const navBar = document.querySelector("#nav-bar");
 let yPos = window.pageYOffset;
     if(yPos > 300) {
         navBar.style.backgroundColor = "cornflowerblue"

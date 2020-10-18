@@ -2,6 +2,7 @@ const skateContainer = document.querySelector("#skate-container");
 const cartCounter = document.querySelector("span")
 const shopBag = document.querySelector("#shop-bag");
 const shopcartOverlay = document.querySelector("#shopCart-overlay");
+const navBar = document.querySelector("#nav-bar");
 
 
 storedSkates.forEach((skate, i)=> {
