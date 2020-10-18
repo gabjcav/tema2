@@ -211,6 +211,11 @@ h2 {
 #main-pic > img {
     height: 40rem;
 }
+ 
+ #leftskate, #rightskate {
+    transition-duration: 1.5s;
+
+} 
 
 #shop-nav-container {
     height: auto;

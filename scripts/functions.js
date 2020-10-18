@@ -121,15 +121,15 @@ function reduce(event) {
     displayCart();
 }
 
-//HERE IS MY ATTEMPT AT A SCROLL ANIMATION FUNCTION. TESTING WITH HEADER COLOR FIRST
+//HERE IS MY SKATE ANIMATION FUNCTION
 
 function onScroll() {
 let yPos = window.pageYOffset;
-    if(yPos > 300) {
-        navBar.style.backgroundColor = "cornflowerblue"
+    if(yPos > 125) {
+        leftSkate.style.transform = "translate(-400px)";
+        rightSkate.style.transform = "translate(400px)";
     } else {
-        navBar.style.backgroundColor = "white"
+        leftSkate.style.transform = "translate(0)";
+        rightSkate.style.transform = "translate(0)";
     }
 }
-
-window.addEventListener("scroll", onScroll);

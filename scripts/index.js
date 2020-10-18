@@ -3,6 +3,8 @@ const cartCounter = document.querySelector("span")
 const shopBag = document.querySelector("#shop-bag");
 const shopcartOverlay = document.querySelector("#shopCart-overlay");
 const navBar = document.querySelector("#nav-bar");
+const leftSkate = document.querySelector("#leftskate");
+const rightSkate = document.querySelector("#rightskate");
 
 
 storedSkates.forEach((skate, i)=> {
@@ -25,7 +27,7 @@ buttons.forEach(button => { button.addEventListener("click", addProductToCart) }
 shopBag.addEventListener("click", displayCart)
 shopBag.addEventListener("mouseover", hideCart);
 
-
+window.addEventListener("scroll", onScroll);
 
 
 
