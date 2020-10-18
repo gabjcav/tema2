@@ -50,7 +50,6 @@ function updateCart() {
 
 function displayCart() {
     shopcartOverlay.style.visibility = "visible";
-    shopcartOverlay.style.height = "auto";
 
     shopBag.src = "https://cdn3.iconfinder.com/data/icons/ui-icons-5/16/cross-small-01-512.png";
     let displayLabel = document.createElement("div");

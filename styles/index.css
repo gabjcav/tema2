@@ -64,6 +64,7 @@ span {
 /* SHOPPING CART DISPLAY STYLING!!!! ----------------------*/
 #shopCart-overlay {
     width: 90vw;
+    height: 55rem;
     background-color: lightgrey;
     z-index: 9;
     visibility: hidden;
@@ -73,7 +74,6 @@ span {
     gap: 1rem;
     overflow: scroll;
     overflow-x: hidden;
-    
 }
 
 
@@ -101,7 +101,6 @@ span {
     overflow: hidden;
     position: relative;
     height: 115px;
-
 }
 
  .name-box {
@@ -284,7 +283,7 @@ h3 {
 
 .skate-box {
     width: 100%;
-    height: 300px;
+    height: 30rem;
     background-color: white;
     grid-gap: 5px;
     border: 1px solid black;
@@ -370,6 +369,7 @@ p {
     #shopCart-overlay {
         left: -3rem;
         width: 95vw;
+        height: 40rem;
         margin-left: 4rem;
     }
 
@@ -407,6 +407,10 @@ p {
         justify-content: center;
     }
 
+    .type-box {
+        font-size: 1.5rem;
+    }
+
     .qty-box {
         font-size: 1.5rem;
     }
@@ -431,6 +435,7 @@ p {
     .skate-box {
         flex-direction: column;
         padding: 0;
+        overflow: hidden;
     }
 
     .descrip-box {
