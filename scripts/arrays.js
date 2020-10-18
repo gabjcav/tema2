@@ -58,9 +58,55 @@
 
 ];
 
+
+const gearItems = [
+    {
+        name: "Lifer Helmet Matte",
+        type: "S1",
+        Price: 60,
+        picUrl: "",
+        qty: 0
+    },
+    {
+        name: "Lifer Helmet Gloss Glitter",
+        type: "S1",
+        Price: 80,
+        picUrl: "",
+        qty: 0
+    },
+    {
+        name: "Lifer Helmet Tan Leopard Matte",
+        type: "S1",
+        Price: 70,
+        picUrl: "",
+        qty: 0
+    },
+    {
+        name: "Lifer Helmet with Visor",
+        type: "S1",
+        Price: 130,
+        picUrl: "",
+        qty: 0
+    },
+    {
+        name: "The Dual Certified Sweatsaver Holo",
+        type: "Triple 8",
+        Price: 60,
+        picUrl: "",
+        qty: 0,
+    },
+    {
+        name: "The Dual Certified Sweatsaver Rainbow",
+        type: "Triple 8",
+        Price: 60,
+        picUrl: "",
+        qty: 0
+    }
+]
 let cart = [];
 
 let skatesToString = JSON.stringify(skates);
+
 
 localStorage.setItem("skates", skatesToString);
 
