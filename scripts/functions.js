@@ -120,3 +120,17 @@ function reduce(event) {
     shopcartOverlay.innerHTML = ""
     displayCart();
 }
+
+//HERE IS MY ATTEMPT AT A SCROLL ANIMATION FUNCTION. TESTING WITH HEADER COLOR FIRST
+
+function onScroll() {
+const navBar = document.querySelector("#nav-bar");
+let yPos = window.pageYOffset;
+    if(yPos > 300) {
+        navBar.style.backgroundColor = "cornflowerblue"
+    } else {
+        navBar.style.backgroundColor = "white"
+    }
+}
+
+window.addEventListener("scroll", onScroll);

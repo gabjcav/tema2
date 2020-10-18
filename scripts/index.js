@@ -3,6 +3,7 @@ const cartCounter = document.querySelector("span")
 const shopBag = document.querySelector("#shop-bag");
 const shopcartOverlay = document.querySelector("#shopCart-overlay");
 
+
 storedSkates.forEach((skate, i)=> {
     skateContainer.innerHTML += `
     <article class="skate-box">
