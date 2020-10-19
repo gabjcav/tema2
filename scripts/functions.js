@@ -133,3 +133,12 @@ let yPos = window.pageYOffset;
         rightSkate.style.transform = "translate(0)";
     }
 }
+
+//HERE IS MY BURGERMENU FUNCTION
+function revealMenu() {
+    // let burgerMenu = document.createElement("div");
+    // burgerMenu.id ="menu";
+    // document.body.appendChild(burgerMenu);
+    //burgerMenu.style.right = 0;
+    burgerMenu.style.right = 0;
+};

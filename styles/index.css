@@ -37,11 +37,44 @@ nav {
 }
 
 #burger {
-    background-color: grey;
+    background-color: #eee;
     margin-right: auto;
+    width: 32px;
+    height: 32px;
+    transition: 0.3s;
+    display: grid;
+    grid-template-rows: repeat(3, 4px);
+    align-content: space-around;
+    margin-left: .5rem;
+   
 }
 
-#burger, .nav-item > img, #shop-bag {
+#burger div {
+    background-color: #333;
+}
+
+#menu {
+    transition: 0.7s ease-in;
+    position: absolute;
+    right: 100vw;
+    top: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(8, 8, 73, 0.76);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu > a {
+    margin-top: 150px;
+    font-size: 4rem;
+    justify-self: center;
+    color: white;
+}
+
+.nav-item > img, #shop-bag {
     width: 4rem;
 }
 
