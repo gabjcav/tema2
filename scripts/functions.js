@@ -29,7 +29,8 @@ function updateCart() {
        shopcartOverlay.innerHTML +=  `
        <div class="displayItem-container">
        <div class="name-box"> 
-       <img src=${item.picUrl}><h5>${item.name}</h5>
+       <img src=${item.picUrl}>
+       <h5>${item.name}</h5>
        <div class="deleteButton" data-name="${item.name}">X</div></div>
        <div class="price-box">$${item.price}.00</div>
        <div class="qty-box"><i class="fas fa-angle-down" data-name="${item.name}"></i>${item.qty}<i class="fas fa-angle-up" data-name="${item.name}"></i></div>
