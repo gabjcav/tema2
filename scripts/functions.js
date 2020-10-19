@@ -136,9 +136,15 @@ let yPos = window.pageYOffset;
 
 //HERE IS MY BURGERMENU FUNCTION
 function revealMenu() {
-    //burgerBars[0].style.backgroundColor = "yellow";
-    burgerBars[0].style.transform = "translateY(10px) rotate(45deg)"
-    burgerBars[1].style.transform = "translateX(727px)"
-    burgerBars[2].style.transform = "translateY(-10px) rotate(-46deg)"
-    burgerMenu.style.right = 0;
+    if (burgerMenu.style.right === "100vw") {
+        burgerBars[0].style.transform = "translateY(10px) rotate(45deg)"
+        burgerBars[1].style.transform = "translateX(727px)"
+        burgerBars[2].style.transform = "translateY(-10px) rotate(-46deg)"
+        burgerMenu.style.right = 0;
+    } else {
+        burgerBars.forEach(bar => bar.style.transform = "");
+        burgerMenu.style.right = "100vw";
+    }
+   
 };
+

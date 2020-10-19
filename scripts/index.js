@@ -55,7 +55,7 @@ shopBag.addEventListener("mouseover", hideCart);
 window.addEventListener("scroll", onScroll);
 
 burgerIcon.addEventListener("click", revealMenu);
-
+//burgerIcon.addEventListener("mouseover", hideMenu);
 
 
 
