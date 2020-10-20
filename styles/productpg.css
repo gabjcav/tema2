@@ -10,6 +10,7 @@ html {
 body {
     background-color: whitesmoke;
     margin: 0;
+    overflow-x: hidden;
 }
 
 main {

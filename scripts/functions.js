@@ -49,7 +49,7 @@ function updateCart() {
 //HERE IS MY DISPLAY CART FUNCTION---------------------------------------------
 
 function displayCart() {
-    shopcartOverlay.style.visibility = "visible";
+    shopcartOverlay.style.right = 0;
 
     shopBag.src = "/tema2/images/xicon.png";
     let displayLabel = document.createElement("div");
@@ -95,7 +95,7 @@ function removeFromCart(event) {
 //HERE IS MY HIDECART FUNCTION--------------------------------------------------
 function hideCart() {
     shopcartOverlay.innerHTML = ""
-    shopcartOverlay.style.visibility = "hidden";
+    shopcartOverlay.style.right = "-100vw";
     shopBag.src="/tema2/images/shopbag.svg";
 }
 
