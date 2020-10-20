@@ -1,38 +1,20 @@
 //HERE IS MY ADD TO CART FUNCTION ----------------------------------------
 
-// function addProductToCart(event) {
-//     hideCart();
-//     let buttonName = event.target.dataset.name;
-//     let product = skates.find(el => el.name === buttonName) || gearItems.find(el => el.name === buttonName);
+function addProductToCart(event) {
+    hideCart();
+    let buttonName = event.target.dataset.name;
+    let item = skates.find(el => el.name === buttonName) 
 
-//     if(product.qty === 0) {
-//         product.qty++
-//         cart.push(product);
+    if(item.qty === 0) {
+        item.qty++
+        cart.push(item);
 
-//     } else {
-//         product.qty++
+    } else {
+        item.qty++
 
-//     }
-  
-//     updateCart()
-// }
-
-// function addProductToCart(event) {
-//     hideCart();
-//     let buttonName = event.target.dataset.name;
-//     let product = skates.find(el => el.name === buttonName) || gearItems.find(el => el.name === buttonName);
-
-//     if(product.qty === 0) {
-//         product.qty++
-//         cart.push(product);
-
-//     } else {
-//         product.qty++
-
-//     }
-  
-//     updateCart()
-// }
+    }
+    updateCart()
+}
 
 //HERE IS MY UPDATE CART FUNCTION--------------------------------------------
 
@@ -59,7 +41,7 @@ function updateCart() {
 
    shopcartOverlay.innerHTML += `
    <div id="display-subTot-container">
-   <p>Subtotal is: $${sum}.00</p>
+   <p id="subTot-text">Subtotal is: $${sum}.00</p>
    </div>
    `
 }
@@ -69,7 +51,7 @@ function updateCart() {
 function displayCart() {
     shopcartOverlay.style.visibility = "visible";
 
-    shopBag.src = "https://cdn3.iconfinder.com/data/icons/ui-icons-5/16/cross-small-01-512.png";
+    shopBag.src = "/tema2/images/xicon.png";
     let displayLabel = document.createElement("div");
 
     shopcartOverlay.appendChild(displayLabel);
@@ -114,7 +96,7 @@ function removeFromCart(event) {
 function hideCart() {
     shopcartOverlay.innerHTML = ""
     shopcartOverlay.style.visibility = "hidden";
-    shopBag.src="./images/shopbag.svg";
+    shopBag.src="/tema2/images/shopbag.svg";
 }
 
 //HERE IS MY ADDMORE ARROW FUNCTION -------------------------------

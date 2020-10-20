@@ -16,7 +16,6 @@ body {
 
 }
 
-/* NAV STARTS HERE --------------------------------------*/
 
 .title-container {
     height: 14rem;
@@ -30,113 +29,6 @@ body {
     background-color: white;
 }
 
-/* SHOPPING CART DISPLAY STYLING!!!! ----------------------*/
-#shopCart-overlay {
-    width: 90vw;
-    height: 55rem;
-    background-color: rgb(226, 221, 221);
-    z-index: 9;
-    visibility: hidden;
-    position: fixed;
-    margin: 6rem;
-    border-radius: 1rem;
-    gap: 1rem;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-
-#display-label-container {
-    font-size: 2.5rem;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    text-align: center;
-    height: 7rem;
-    border-bottom: 1px solid black;
-    overflow: hidden;
-    letter-spacing: .5rem;
-    position: relative;
-}
-
-#display-label-container > h5 {
-    margin-bottom: 0;
-}
-
-.displayItem-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    text-align: center;
-    padding: .5rem;
-    overflow: hidden;
-    position: relative;
-    height: 115px;
-}
-
- .name-box {
-     grid-column: 1;
-     display: flex;
-     gap: 5rem;
-     font-size: 2rem;
-     overflow: hidden;
-     
-}
-
-.name-box > h5 {
-    width: 100px;
-    align-self: flex-start;
-}
-
-.name-box > img {
-    width: 100px;
-}
-
-.deleteButton {
-    align-self: center;
-    background-color: #333;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-} 
-
-.price-box, .qty-box, .totalPrice-box {
-    font-size: 2rem;
-    align-self: center;
-}
-
-.price-box {
-    grid: 2;
-}
-
-.qty-box {
-    grid: 3;
-}
-
- i {
-     padding: 0 1.5rem 0 1.5rem;
- }
-
-.totalPrice-box {
-  grid: 4;
-} 
-
-#display-subTot-container {
-    overflow: hidden;
-    display: flex;
-    flex-direction: row-reverse;
-    padding: .5rem 5rem 0 0;
-    border-top: 1px solid black;
-    width: 100%;
-    height: 4rem;
-    font-weight: 600;
-  
-}
-/* SHOPPING CART DISPLAY STYLING ENDS---------------------- */
 
 
 h1, h2 {
@@ -262,7 +154,7 @@ h3 {
 
 }
 
-.buy-btn {
+.select-btn {
     align-self: flex-end;
     padding: 1rem;
     margin: 1rem;
@@ -276,11 +168,11 @@ h3 {
     border-radius: 50px;
 }
 
-.buy-btn:hover {
-    background-color: rgb(71, 70, 70);
+.select-btn:hover {
+    background-color: rgb(31, 31, 31)
 }
 
-.buy-btn > a {
+.select-btn > a {
     color: #eeeeee;
 }
 article > img {
@@ -430,7 +322,7 @@ p {
         width: 100%;
     }
 
-    .buy-btn {
+    .select-btn {
         bottom: 0;
         width: 95%;
         left: 0;

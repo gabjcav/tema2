@@ -3,7 +3,8 @@
 }
 
 html {
-    font-size: 62,5%;
+    font-size: 62.5%;
+    font-family: sans-serif
 }
 
 body {
@@ -12,18 +13,62 @@ body {
 }
 
 main {
-    background-color: lightgrey;
-    height: 100vh;
-    margin-top: 80px;
+    background-color: white;
+    height: fit-content;
+    margin-top: 5rem;
     position: relative;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
 }
 
-#imageContainer {
+#imageContainer, #infoContainer {
+    height: 530px;
+    width: 455px;
+    padding: 1rem 5rem 5rem 5rem;
     margin: 10px;
+}
+
+#infoContainer {
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+#product-img {
+    width: 35rem;
+    height: 35rem;
+}
+
+
+h2 {
+    font-size: 2.5rem;
+    /* margin: .5rem; */
+    /* padding-bottom: 1rem; */
+}
+
+#descrip-text {
+    font-size: 2rem;
+    /* padding: 1rem 1rem 5rem 1rem; */
+    letter-spacing: .1rem;
+    line-height: 3rem;
+}
+
+.buy-btn {
+    background-color: #333;
+    color: #eee;
+    width: 100%;
+    height: 4.5rem;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    /* margin-top: 15rem; */
+
 
 }
-img {
-    width: 30rem;
-    height: 30rem;
+
+.buy-btn:hover {
+    background-color: rgb(31, 31, 31);
 }
