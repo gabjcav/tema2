@@ -6,6 +6,7 @@ let main = document.querySelector("main");
 //document.body.innerHTML = product.name;
 
 let imageContainer = document.createElement("div");
+imageContainer.id = "imageContainer"
 main.appendChild(imageContainer)
 imageContainer.innerHTML = `
 <img src=".${product.picUrl}">
