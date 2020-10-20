@@ -2,6 +2,7 @@
  const skates = [
     {
         name: "Reidell Solaris",
+        id: "skate1",
         type: "Roller Derby",
         price: 300,
         picUrl: "./images/solaris.png",
@@ -12,6 +13,7 @@
     },
     {
         name: "Bont Quad Star",
+        id: "skate2",
         type: "Roller Derby",
         price: 600,
         picUrl: "./images/bontquadstar.png",
@@ -21,6 +23,7 @@
     },
     {
         name: "Chaya Emerald Soft",
+        id: "skate3",
         type: "Roller Derby",
         price: 150,
         picUrl: "./images/chayaemeraldsoft.jpg",
@@ -30,6 +33,7 @@
     },
     {
         name: "Moxi Lolly",
+        id: "skate4",
         type: "Park Skate",
         price: 300,
         picUrl: "./images/lolly.png",
@@ -39,6 +43,7 @@
     },
     {
         name: "Chaya Karma ",
+        id: "skate5",
         type: "Park Skate",
         price: 380,
         picUrl: "./images/chaya.jpg", 
@@ -48,6 +53,7 @@
     },
     {
         name: "Custom Van Skates",
+        id: "skate6",
         type: "Park Skate",
         price: 540,
         picUrl: "./images/vans.png",

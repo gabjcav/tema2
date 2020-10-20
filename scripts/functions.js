@@ -1,21 +1,38 @@
 //HERE IS MY ADD TO CART FUNCTION ----------------------------------------
 
-function addProductToCart(event) {
-    hideCart();
-    let buttonName = event.target.dataset.name;
-    let product = skates.find(el => el.name === buttonName) || gearItems.find(el => el.name === buttonName);
+// function addProductToCart(event) {
+//     hideCart();
+//     let buttonName = event.target.dataset.name;
+//     let product = skates.find(el => el.name === buttonName) || gearItems.find(el => el.name === buttonName);
 
-    if(product.qty === 0) {
-        product.qty++
-        cart.push(product);
+//     if(product.qty === 0) {
+//         product.qty++
+//         cart.push(product);
 
-    } else {
-        product.qty++
+//     } else {
+//         product.qty++
 
-    }
+//     }
   
-    updateCart()
-}
+//     updateCart()
+// }
+
+// function addProductToCart(event) {
+//     hideCart();
+//     let buttonName = event.target.dataset.name;
+//     let product = skates.find(el => el.name === buttonName) || gearItems.find(el => el.name === buttonName);
+
+//     if(product.qty === 0) {
+//         product.qty++
+//         cart.push(product);
+
+//     } else {
+//         product.qty++
+
+//     }
+  
+//     updateCart()
+// }
 
 //HERE IS MY UPDATE CART FUNCTION--------------------------------------------
 
@@ -147,4 +164,6 @@ function revealMenu() {
     }
    
 };
+
+
 

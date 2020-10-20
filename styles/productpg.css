@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62,5%;
+}
+
+body {
+    background-color: whitesmoke;
+    margin: 0;
+}
+
+main {
+    background-color: lightgrey;
+    height: 100vh;
+    margin-top: 80px;
+    position: relative;
+}
+
+img {
+    width: 20rem;
+    height: 20rem;
+}

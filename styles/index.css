@@ -16,77 +16,7 @@ body {
 
 }
 
-nav {
-    background-color: white;
-    border-bottom: 1px solid black;
-    width: 100vw;
-    height: 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-content: center;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-}
-
-.nav-item {
-    width: 100px;
-}
-
-#burger {
-    background-color: white;
-    position: absolute;
-    top: 20px;
-    left: 10px;
-    height: 100%;
-    width: 70%;
-    display: grid;
-    grid-template-rows: repeat(3, 2px);
-    row-gap: 8px;
-    margin-left: .5rem;
-    padding-bottom: 0;
-   
-}
-
-#burger div {
-    background-color: #333;
-    transition: 1s;
-    z-index: 2;
-    width: 30px;
-    height: 3px;
-    padding: 0;
-    margin: 0;
-}
-
-#menu {
-    transition: 1s;
-    position: absolute;
-    right: 100vw;
-    top: 0;
-    z-index: 1;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(8, 8, 73, 0.76);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#menu > a {
-    margin-top: 150px;
-    font-size: 4rem;
-    justify-self: center;
-    color: white;
-}
-
-.nav-item > img, #shop-bag {
-    width: 4rem;
-}
-
-span {
-  font-size: 2.5rem;
-}
+/* NAV STARTS HERE --------------------------------------*/
 
 .title-container {
     height: 14rem;
@@ -104,7 +34,7 @@ span {
 #shopCart-overlay {
     width: 90vw;
     height: 55rem;
-    background-color: lightgrey;
+    background-color: rgb(226, 221, 221);
     z-index: 9;
     visibility: hidden;
     position: fixed;
@@ -317,7 +247,7 @@ h3 {
     padding: 30px;
     grid-gap: 10px;
     width: 100%;
-
+    position: relative;
 }
 
 .skate-box, .gear-box {
@@ -332,6 +262,27 @@ h3 {
 
 }
 
+.buy-btn {
+    align-self: flex-end;
+    padding: 1rem;
+    margin: 1rem;
+    width: 40rem;
+    position: absolute;
+    left: 3rem;
+    background-color: #333;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    border-radius: 50px;
+}
+
+.buy-btn:hover {
+    background-color: rgb(71, 70, 70);
+}
+
+.buy-btn > a {
+    color: #eeeeee;
+}
 article > img {
     height: 200px;
     padding: .5rem;
@@ -369,21 +320,6 @@ p {
     margin: 0;
 }
 
-.buy-btn {
-    align-self: flex-end;
-    padding: 1rem;
-    margin: 1rem;
-    width: 40rem;
-    position: absolute;
-    left: 3rem;
-}
-
-
-
-
-
-
-
 
 /* START OF MEDIA QUERIES */
 
@@ -412,6 +348,9 @@ p {
         border-radius: 0%;
     }
 
+    #burger {
+        width: 50%;
+    }
     #shopCart-overlay {
         left: -3rem;
         width: 95vw;

@@ -19,7 +19,7 @@ burgerMenu.innerHTML += `
 `
 
 
-storedSkates.forEach((skate) => {
+storedSkates.forEach((skate,) => {
     skateContainer.innerHTML += `
     <article class="skate-box">
     <img src=${skate.picUrl}>
@@ -27,7 +27,7 @@ storedSkates.forEach((skate) => {
     <p class="type-box">Type: ${skate.type}</p>
     <p class="price-box">Price: ${skate.price}</p>
     </div>
-    <button data-name="${skate.name}" class="buy-btn">Select</button>
+    <div data-name="${skate.name}" class="buy-btn"><a href="pages/productpage.html?name=${skate.id}">Select</a></div>
     </article>
     `
 });
@@ -45,9 +45,9 @@ storedGear.forEach((item) => {
     `
 });
 
-let buttons = document.querySelectorAll("button");
+//let buttons = document.querySelectorAll("button");
 
-buttons.forEach(button => { button.addEventListener("click", addProductToCart) } );
+//buttons.forEach(button => { button.addEventListener("click", addProductToCart) } );
 
 shopBag.addEventListener("click", displayCart);
 shopBag.addEventListener("mouseover", hideCart);
@@ -73,4 +73,6 @@ burgerIcon.addEventListener("click", revealMenu);
 
 
 //LOOK INTO EVENT BUBBLING
+//OLD SELECT BUTTON BELOW: 
 
+{/* <button data-name="${skate.name}" class="buy-btn"><a href="pages/productpage.html?name=${skate.name}">Select</a></button> */}
