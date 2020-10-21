@@ -5,7 +5,7 @@ burgerMenu.id ="menu";
 document.body.appendChild(burgerMenu);
 
 burgerMenu.innerHTML += `
-<a href="">HOME</<a>
+<a href="/tema2/index.html">HOME</<a>
 <a href="">ABOUT</a>
 <a href="">SKATER-NAME GENERATOR</a>
 `

@@ -116,8 +116,14 @@ let cart = [];
 let skatesToString = JSON.stringify(skates);
 let gearItemsToString = JSON.stringify(gearItems);
 
+//let cartToString = JSON.stringify(cart);
+
 localStorage.setItem("skates", skatesToString);
 localStorage.setItem("gearItems", gearItemsToString);
 
+//localStorage.setItem("cart", cartToString)
+
 let storedSkates = JSON.parse(localStorage.getItem("skates"));
 let storedGear = JSON.parse(localStorage.getItem("gearItems"));
+
+//let storedCart = JSON.parse(localStorage.getItem("cart"));

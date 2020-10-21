@@ -9,6 +9,19 @@ function addProductToCart(event) {
         item.qty++
         cart.push(item);
 
+
+        //localStorage.setItem("storedCart", JSON.stringify(cart));
+        //let retrievedCart = JSON.parse(localStorage.getItem(storedCart))
+
+        //console.log(retrievedCart)
+
+        //THE CODE BELOW DIDNT WORK WHEN I CHANGED PAGES
+        // let cartToString = JSON.stringify(cart);
+        // localStorage.setItem("cart", cartToString);
+        // let storedSkates = JSON.parse(localStorage.getItem("cart"));
+        // console.log(storedSkates);
+        //-------------------------------------------------
+
     } else {
         item.qty++
 
@@ -147,6 +160,4 @@ function revealMenu() {
     }
    
 };
-
-
 
