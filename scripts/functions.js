@@ -10,7 +10,7 @@ function addProductToCart(event) {
     } 
 
     let storedCart = JSON.parse(localStorage.getItem("cart"));
-    
+
     if(item.qty === 0) {
         item.qty++
         storedCart.push(item)
@@ -27,10 +27,11 @@ function addProductToCart(event) {
 
 function updateCart() {
     let storedCart = JSON.parse(localStorage.getItem("cart"));
+
     let counter = 0;
-     storedCart.forEach(item => {counter += item.qty});
-     cartCounter.innerText = counter;
-     let sum = 0
+    storedCart.forEach(item => {counter += item.qty});
+    cartCounter.innerText = counter;
+    let sum = 0
 
    storedCart.forEach((item) => {
        shopcartOverlay.innerHTML +=  `
@@ -89,10 +90,14 @@ function displayCart() {
 //HERE IS MY REMOVE FROM CART FUNCTION ----------------------------------------
 
 function removeFromCart(event) {
+    let storedCart = JSON.parse(localStorage.getItem("cart"));
     let buttonName = event.target.dataset.name
-    for (let i = 0; i < cart.length; i+= 1) {
-        if(cart[i].name === buttonName) {
-            cart.splice(i, 1)
+    
+    for (let i = 0; i < storedCart.length; i+= 1) {
+        if(storedCart[i].name === buttonName) {
+            storedCart.splice(i, 1)
+            //console.log(storedCart[i].name)
+            localStorage.setItem('cart', JSON.stringify(storedCart));
         }
     }
 
