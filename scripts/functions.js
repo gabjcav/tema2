@@ -5,39 +5,34 @@ function addProductToCart(event) {
     let buttonName = event.target.dataset.name;
     let item = skates.find(el => el.name === buttonName) 
 
+    if(localStorage.getItem("cart") == null) {
+        localStorage.setItem("cart", "[]");
+    } 
+
+    let storedCart = JSON.parse(localStorage.getItem("cart"));
+    
     if(item.qty === 0) {
         item.qty++
-        cart.push(item);
-
-
-        //localStorage.setItem("storedCart", JSON.stringify(cart));
-        //let retrievedCart = JSON.parse(localStorage.getItem(storedCart))
-
-        //console.log(retrievedCart)
-
-        //THE CODE BELOW DIDNT WORK WHEN I CHANGED PAGES
-        // let cartToString = JSON.stringify(cart);
-        // localStorage.setItem("cart", cartToString);
-        // let storedSkates = JSON.parse(localStorage.getItem("cart"));
-        // console.log(storedSkates);
-        //-------------------------------------------------
-
+        storedCart.push(item)
     } else {
-        item.qty++
-
+        let storedItem = storedCart.find(el => el.name === item.name);
+        storedItem.qty++
     }
+
+    localStorage.setItem("cart", JSON.stringify(storedCart));
     updateCart()
 }
 
 //HERE IS MY UPDATE CART FUNCTION--------------------------------------------
 
 function updateCart() {
+    let storedCart = JSON.parse(localStorage.getItem("cart"));
     let counter = 0;
-    cart.forEach(item => {counter += item.qty});
-    cartCounter.innerText = counter;
-    let sum = 0
+     storedCart.forEach(item => {counter += item.qty});
+     cartCounter.innerText = counter;
+     let sum = 0
 
-   cart.forEach((item) => {
+   storedCart.forEach((item) => {
        shopcartOverlay.innerHTML +=  `
        <div class="displayItem-container">
        <div class="name-box">
