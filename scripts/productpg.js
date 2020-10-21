@@ -7,6 +7,7 @@ const cartCounter = document.querySelector("span")
 const shopBag = document.querySelector("#shop-bag");
 const shopcartOverlay = document.querySelector("#shopCart-overlay")
 
+updateCartCounter();
 const imageContainer = document.createElement("div");
 const infoContainer = document.createElement("div");
 imageContainer.id = "imageContainer";

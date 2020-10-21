@@ -6,18 +6,9 @@ const shopcartOverlay = document.querySelector("#shopCart-overlay");
 const navBar = document.querySelector("#nav-bar");
 const leftSkate = document.querySelector("#leftskate");
 const rightSkate = document.querySelector("#rightskate");
-// const burgerIcon = document.querySelector("#burger");
-// const burgerBars = document.querySelectorAll(".burgerBars")
-// let burgerMenu = document.createElement("div");
-// burgerMenu.id ="menu";
-// document.body.appendChild(burgerMenu);
 
-// burgerMenu.innerHTML += `
-// <a href="">HOME</<a>
-// <a href="">ABOUT</a>
-// <a href="">SKATER-NAME GENERATOR</a>
-// `
 
+updateCartCounter();
 
 storedSkates.forEach((skate,) => {
     skateContainer.innerHTML += `

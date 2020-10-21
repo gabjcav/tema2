@@ -23,14 +23,20 @@ function addProductToCart(event) {
     updateCart()
 }
 
-//HERE IS MY UPDATE CART FUNCTION--------------------------------------------
-
-function updateCart() {
+//NEED A CART COUNTER ALWAYS DISPLAYING THING---------------
+function updateCartCounter() {
     let storedCart = JSON.parse(localStorage.getItem("cart"));
-
     let counter = 0;
     storedCart.forEach(item => {counter += item.qty});
     cartCounter.innerText = counter;
+}
+
+
+//HERE IS MY UPDATE CART FUNCTION--------------------------------------------
+
+function updateCart() {
+    updateCartCounter()
+    let storedCart = JSON.parse(localStorage.getItem("cart"));
     let sum = 0
 
    storedCart.forEach((item) => {
