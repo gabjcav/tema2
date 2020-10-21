@@ -5,9 +5,8 @@
     z-index: 1;
     background-color: lightgrey;
     height: 100%;
-    width: 43vw;
+    width: 50vw;
     transition: .5s;
-    
 }
 
 
@@ -17,9 +16,71 @@
     text-align: center;
     border-bottom: 1px solid black;
     font-size: 2rem;
+}
+
+.displayItem-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+}
+
+.name-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-box h5 {
+    margin: .5rem;
+    font-size: 1.5rem;
+}
+
+.cart-prdt-img {
+    height: 100px;
+    width: 100px;
+}
+
+.deleteButton {
+    background-color: #333;
+    color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 26px;
+    top: 22px;
 
 }
 
+.deleteButton:hover {
+    background-color: rgb(26, 25, 25);
+}
+
+.price-box, .qty-box, .totalPrice-box  {
+    align-self: center;
+    justify-self: center;
+    font-size: 2rem;
+}
+
+i {
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+#display-subTot-container {
+    display: flex;
+    font-size: 2rem;
+    padding-left: 5px;
+}
+
+#subTot-text {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: lightgoldenrodyellow;
+}
 /* #shopCart-overlay {
     width: 90vw;
     height: 55rem;

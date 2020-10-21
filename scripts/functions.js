@@ -27,8 +27,9 @@ function updateCart() {
    cart.forEach((item) => {
        shopcartOverlay.innerHTML +=  `
        <div class="displayItem-container">
-       <div class="name-box"> 
-       <img src=${item.picUrl}><h5>${item.name}</h5>
+       <div class="name-box">
+       <h5>${item.name}</h5> 
+       <img class="cart-prdt-img" src=${item.picUrl}>
        <div class="deleteButton" data-name="${item.name}">X</div></div>
        <div class="price-box">$${item.price}.00</div>
        <div class="qty-box"><i class="fas fa-angle-down" data-name="${item.name}"></i>${item.qty}<i class="fas fa-angle-up" data-name="${item.name}"></i></div>
@@ -41,7 +42,7 @@ function updateCart() {
 
    shopcartOverlay.innerHTML += `
    <div id="display-subTot-container">
-   <p id="subTot-text">Subtotal is: $${sum}.00</p>
+   <p id="subTot-text">Sub total is: $${sum}.00</p>
    </div>
    `
 }
