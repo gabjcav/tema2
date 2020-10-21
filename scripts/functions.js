@@ -116,9 +116,11 @@ function hideCart() {
 //HERE IS MY ADDMORE ARROW FUNCTION -------------------------------
 
 function addMore(event) {
+    let storedCart = JSON.parse(localStorage.getItem("cart"));
     let upArrowName = event.target.dataset.name;
-    let product = cart.find(el => el.name === upArrowName);
+    let product = storedCart.find(el => el.name === upArrowName);
     product.qty++;
+    localStorage.setItem('cart', JSON.stringify(storedCart));
     
     shopcartOverlay.innerHTML = ""
     displayCart();
@@ -126,9 +128,11 @@ function addMore(event) {
   
 //HERE IS MY REDUCE ARROW FUNCTION --------------------------------
 function reduce(event) {
+    let storedCart = JSON.parse(localStorage.getItem("cart"));
     let downArrowName = event.target.dataset.name;
-    let product = cart.find(el => el.name === downArrowName);
+    let product = storedCart.find(el => el.name === downArrowName);
     product.qty--;
+    localStorage.setItem('cart', JSON.stringify(storedCart));
 
     shopcartOverlay.innerHTML = ""
     displayCart();
