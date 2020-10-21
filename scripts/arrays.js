@@ -68,46 +68,59 @@
 const gearItems = [
     {
         name: "Lifer Helmet Matte",
+        id: "item01",
         type: "S1",
         price: 60,
-        picUrl: "./images/s1matte.png",
-        qty: 0
+        picUrl: "/tema2/images/s1matte.png",
+        qty: 0,
+        descrip: "The S1 Lifer Helmet is one of the best fitting and safest helmets for Skateboarding, Longboarding, BMX and Roller Derby. The Lifer Helmet uses a specially formulated EPS Fusion Foam which allows it to protect your head from multiple low force impacts as well as high impacts. The Lifer Helmet is a Certified 'multi-impact' helmet and is up to 5x more protective than the soft foam non-certified helmets."
         
     },
     {
         name: "Lifer Helmet Gloss Glitter",
+        id: "item02",
         type: "S1",
         price: 80,
-        picUrl: "./images/s1glitter.png",
-        qty: 0
+        picUrl: "/tema2/images/s1glitter.png",
+        qty: 0,
+        descrip: "The S1 Lifer Helmet is one of the best fitting and safest helmets for Skateboarding, Longboarding, BMX and Roller Derby. The Lifer Helmet uses a specially formulated EPS Fusion Foam which allows it to protect your head from multiple low force impacts as well as high impacts. The Lifer Helmet is a Certified 'multi-impact' helmet and is up to 5x more protective than the soft foam non-certified helmets."
     },
+
     {
         name: "Lifer Helmet Tan Leopard Matte",
+        id: "item03",
         type: "S1",
         price: 70,
-        picUrl: "./images/s1leopard.png",
-        qty: 0
+        picUrl: "/tema2/images/s1leopard.png",
+        qty: 0,
+        descrip: "The S1 Lifer Helmet is one of the best fitting and safest helmets for Skateboarding, Longboarding, BMX and Roller Derby. The Lifer Helmet uses a specially formulated EPS Fusion Foam which allows it to protect your head from multiple low force impacts as well as high impacts. The Lifer Helmet is a Certified 'multi-impact' helmet and is up to 5x more protective than the soft foam non-certified helmets."
     },
     {
         name: "Lifer Helmet with Visor",
+        id: "item04",
         type: "S1",
         price: 130,
-        picUrl: "./images/s1visor.png",
-        qty: 0
+        picUrl: "/tema2/images/s1visor.png",
+        qty: 0,
+        descrip: "This is S1 Lifer Helmet W/ Visor Gen 2. This is the second edition of this product and has been completely redesigned from the original version. Each helmet will come with a carrying bag, mounting hardware, a micro fiber cloth and three top pads in varying thickness's to effect how deep or shallow you want the helmet to sit on your head."
     },
     {
         name: "The Dual Certified Sweatsaver Holo",
+        id: "item05",
         type: "Triple 8",
         price: 60,
-        picUrl:"./images/triple8holo.png",
-        qty: 0
+        picUrl:"/tema2/images/triple8holo.png",
+        qty: 0,
+        descrip: "The Holy Grail of Comfort and Protection. The FIRST and ONLY helmet to fully integrate the best of high impact absorbing EPS Foam with thick dual density soft foam and plush Sweatsaver fabric, delivering the ultimate in comfort with dual certified protection."
     },
     {
         name: "The Dual Certified Sweatsaver Rainbow",
+        id: "item06",
         type: "Triple 8",
         price: 60,
-        picUrl: "./images/triple8rainbow.png",
-        qty: 0
+        picUrl: "/tema2/images/triple8rainbow.png",
+        qty: 0,
+        descrip: "The Holy Grail of Comfort and Protection. The FIRST and ONLY helmet to fully integrate the best of high impact absorbing EPS Foam with thick dual density soft foam and plush Sweatsaver fabric, delivering the ultimate in comfort with dual certified protection."
     },
 ];
 

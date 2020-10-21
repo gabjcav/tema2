@@ -18,7 +18,7 @@ storedSkates.forEach((skate,) => {
     <p class="type-box">Type: ${skate.type}</p>
     <p class="price-box">Price: ${skate.price}</p>
     </div>
-    <div data-name="${skate.name}" class="select-btn"><a href="pages/productpage.html?name=${skate.id}">Select</a></div>
+    <div data-name="${skate.name}"class="select-btn"><a href="pages/productpage.html?name=${skate.id}">Select</a></div>
     </article>
     `
 });
@@ -31,7 +31,7 @@ storedGear.forEach((item) => {
     <p class="type-box">Type: ${item.type}</p>
     <p class="price-box">Price: ${item.price}</p>
     </div>
-    <button data-name="${item.name}" class="select-btn">Select</button>
+    <div data-name="${item.name}"class="select-btn"><a href="pages/productpage.html?name=${item.id}">Select</a></div>
     </article>
     `
 });
@@ -41,25 +41,5 @@ shopBag.addEventListener("mouseover", hideCart);
 
 window.addEventListener("scroll", onScroll);
 
-//burgerIcon.addEventListener("click", revealMenu);
-//burgerIcon.addEventListener("mouseover", hideMenu);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//LOOK INTO EVENT BUBBLING
-//OLD SELECT BUTTON BELOW: 
-
-{/* <button data-name="${skate.name}" class="buy-btn"><a href="pages/productpage.html?name=${skate.name}">Select</a></button> */}

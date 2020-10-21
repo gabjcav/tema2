@@ -1,6 +1,6 @@
 let windowID = window.location.search;
 let productID = windowID.substring(6,12)
-let product = skates.find(el => el.id === productID);
+let product = skates.find(el => el.id === productID) || gearItems.find(el => el.id === productID);
 
 const main = document.querySelector("main");
 const cartCounter = document.querySelector("span")

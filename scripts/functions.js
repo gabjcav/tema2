@@ -102,7 +102,6 @@ function removeFromCart(event) {
     for (let i = 0; i < storedCart.length; i+= 1) {
         if(storedCart[i].name === buttonName) {
             storedCart.splice(i, 1)
-            //console.log(storedCart[i].name)
             localStorage.setItem('cart', JSON.stringify(storedCart));
         }
     }

@@ -56,6 +56,10 @@ h2 {
     /* padding: 1rem 1rem 5rem 1rem; */
     letter-spacing: .1rem;
     line-height: 3rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 30rem;
+
 }
 
 .buy-btn {
