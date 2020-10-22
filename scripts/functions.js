@@ -3,7 +3,7 @@
 function addProductToCart(event) {
     hideCart();
     let buttonName = event.target.dataset.name;
-    let item = skates.find(el => el.name === buttonName) 
+    let item = skates.find(el => el.name === buttonName) || gearItems.find(el => el.name === buttonName);
 
     if(localStorage.getItem("cart") == null) {
         localStorage.setItem("cart", "[]");
