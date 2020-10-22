@@ -1,6 +1,6 @@
 nav {
     background-color: white;
-    border-bottom: 1px solid black;
+    border-bottom: .1rem solid black;
     width: 100vw;
     height: 5rem;
     display: flex;
@@ -19,16 +19,16 @@ nav {
 #site-title {
     font-size: 2rem;
     position: absolute;
-    right: 400px;
-    width: 200px;
+    right: 40rem;
+    width: 20rem;
     align-self: center;
     font-weight: 600;
 }
 #burger {
     background-color: rgba(255, 255, 255, 0);
     position: absolute;
-    top: 20px;
-    left: 10px;
+    top: 2rem;
+    left: 1rem;
     height: 75%;
     width: 70%;
     display: grid;
@@ -44,8 +44,8 @@ nav {
     background-color: #333;
     transition: 1s;
     z-index: 3;
-    width: 30px;
-    height: 3px;
+    width: 3rem;
+    height: .3rem;
     padding: 0;
     margin: 0;
 }
@@ -65,7 +65,7 @@ nav {
 }
 
 #menu > a {
-    margin-top: 150px;
+    margin-top: 15rem;
     font-size: 4rem;
     justify-self: center;
     color: white;
@@ -73,10 +73,10 @@ nav {
 }
 
 #searchIcon {
-    width: 40px;
+    width: 4rem;
 }
  #shop-bag {
-    width: 40px;
+    width: 4rem;
 }
 
 span {

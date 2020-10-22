@@ -28,11 +28,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: .5rem;
 }
 
 .name-box h5 {
-    margin: .5rem;
+    margin: 1rem;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .cart-prdt-img {
@@ -43,17 +45,13 @@
 .deleteButton {
     background-color: #333;
     color: white;
-    width: 25px;
-    height: 25px;
+    width: 2.5rem;
+    height: 2.5rem;
     align-self: flex-end;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    /* position: absolute;
-    left: 150px;
-    top: 52px; */
-
 }
 
 .deleteButton:hover {
@@ -73,121 +71,12 @@ i {
 #display-subTot-container {
     display: flex;
     font-size: 2rem;
-    padding-left: 5px;
+    padding-left: .5rem;
 }
 
 #subTot-text {
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 50px;
+    padding: 1rem;
+    border: .1rem solid black;
+    border-radius: 5rem;
     background-color: lightgoldenrodyellow;
 }
-/* #shopCart-overlay {
-    width: 90vw;
-    height: 55rem;
-    background-color: rgb(226, 221, 221);
-    z-index: 9;
-    visibility: hidden;
-    position: fixed;
-    margin: 6rem;
-    border-radius: 1rem;
-    gap: 1rem;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-
-#display-label-container {
-    font-size: 2.5rem;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    text-align: center;
-    height: 7rem;
-    border-bottom: 1px solid black;
-    overflow: hidden;
-    letter-spacing: .5rem;
-    position: relative;
-}
-
-#display-label-container > h5 {
-    margin-bottom: 0;
-}
-
-.displayItem-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    text-align: center;
-    padding: .5rem;
-    overflow: hidden;
-    position: relative;
-    height: 115px;
-}
-
- .name-box {
-     grid-column: 1;
-     display: flex;
-     gap: 5rem;
-     font-size: 2rem;
-     overflow: hidden;
-     
-}
-
-.name-box > h5 {
-    width: 100px;
-    align-self: flex-start;
-}
-
-.name-box > img {
-    width: 100px;
-}
-
-.deleteButton {
-    align-self: center;
-    background-color: #333;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-} 
-
-.price-box, .qty-box, .totalPrice-box {
-    font-size: 2rem;
-    align-self: center;
-}
-
-.price-box {
-    grid: 2;
-}
-
-.qty-box {
-    grid: 3;
-}
-
- i {
-     padding: 0 1.5rem 0 1.5rem;
- }
-
-.totalPrice-box {
-  grid: 4;
-} 
-
-#display-subTot-container {
-    overflow: hidden;
-    display: flex;
-    flex-direction: row-reverse;
-    padding: .5rem 5rem 0 0;
-    border-top: 1px solid black;
-    width: 100%;
-    height: 4rem;
-    font-weight: 600;
-  
-}
-
-#subTot-text {
-    font-size: 1.5rem;
-} */
