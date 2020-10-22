@@ -18,7 +18,7 @@ main.appendChild(infoContainer);
 
 imageContainer.innerHTML = `
 <h1>${product.name}</h1>
-<img id="product-img" src="${product.picUrl}">
+<img id="product-img" src="${product.picUrl}" alt="${product.alt}">
 `
 
 infoContainer.innerHTML = `

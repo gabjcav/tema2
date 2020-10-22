@@ -13,7 +13,7 @@ updateCartCounter();
 storedSkates.forEach((skate,) => {
     skateContainer.innerHTML += `
     <article class="skate-box">
-    <img src=${skate.picUrl}>
+    <img src=${skate.picUrl} alt="${skate.alt}">
     <div class="descrip-box"><h4>${skate.name}</h4>
     <p class="type-box">Type: ${skate.type}</p>
     <p class="price-box">Price: ${skate.price}</p>
@@ -26,7 +26,7 @@ storedSkates.forEach((skate,) => {
 storedGear.forEach((item) => {
     gearContainer.innerHTML += `
     <article class="gear-box">
-    <img src=${item.picUrl}>
+    <img src=${item.picUrl} alt="${item.alt}">
     <div class="descrip-box" id="gear-descrip-box"><h4>${item.name}</h4>
     <p class="type-box">Type: ${item.type}</p>
     <p class="price-box">Price: ${item.price}</p>
