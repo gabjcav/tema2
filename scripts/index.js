@@ -7,7 +7,6 @@ const navBar = document.querySelector("#nav-bar");
 const leftSkate = document.querySelector("#leftskate");
 const rightSkate = document.querySelector("#rightskate");
 
-
 updateCartCounter();
 
 storedSkates.forEach((skate,) => {

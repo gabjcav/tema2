@@ -8,6 +8,8 @@ const shopBag = document.querySelector("#shop-bag");
 const shopcartOverlay = document.querySelector("#shopCart-overlay")
 
 updateCartCounter();
+
+//HERE I AM CREATING CONTAINERS FEATURING THE SELECTED PRODUCTS AND INSERTING STORED INFORMATION ABOUT THEM
 const imageContainer = document.createElement("div");
 const infoContainer = document.createElement("div");
 imageContainer.id = "imageContainer";
