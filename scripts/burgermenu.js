@@ -7,6 +7,6 @@ document.body.appendChild(burgerMenu);
 burgerMenu.innerHTML += `
 <a href="/tema2/index.html">HOME</<a>
 <a href="">ABOUT</a>
-<a href="">SKATER-NAME GENERATOR</a>
+<a href="/tema2/pages/name-gen.html">SKATER-NAME GENERATOR</a>
 `
 burgerIcon.addEventListener("click", revealMenu);
