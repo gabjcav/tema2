@@ -35,7 +35,7 @@ storedGear.forEach((item) => {
     `
 });
 
-shopBag.addEventListener("click", displayCart);
+shopBag.addEventListener("click", displayCart, hideCart);
 shopBag.addEventListener("mouseover", hideCart);
 
 window.addEventListener("scroll", onScroll);

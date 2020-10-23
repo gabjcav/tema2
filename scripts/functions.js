@@ -1,7 +1,7 @@
 //HERE IS MY ADD TO CART FUNCTION ----------------------------------------
 
 function addProductToCart(event) {
-    hideCart();
+     hideCart();
     let buttonName = event.target.dataset.name;
     let item = skates.find(el => el.name === buttonName) || gearItems.find(el => el.name === buttonName);
 
@@ -23,7 +23,7 @@ function addProductToCart(event) {
     updateCart()
 }
 
-//NEED A CART COUNTER ALWAYS DISPLAYING THING---------------
+//NEED A CART COUNTER ALWAYS DISPLAYING FUNCTION---------------
 function updateCartCounter() {
     let storedCart = JSON.parse(localStorage.getItem("cart"));
     let counter = 0;
@@ -65,31 +65,29 @@ function updateCart() {
 //HERE IS MY DISPLAY CART FUNCTION---------------------------------------------
 
 function displayCart() {
-    shopcartOverlay.style.right = 0;
+        shopcartOverlay.style.right = 0;
+        shopBag.src = "/tema2/images/xicon.png";
 
-    shopBag.src = "/tema2/images/xicon.png";
-    let displayLabel = document.createElement("div");
+        let displayLabel = document.createElement("div");
 
-    shopcartOverlay.appendChild(displayLabel);
-    displayLabel.id = "display-label-container";
+        shopcartOverlay.appendChild(displayLabel);
+        displayLabel.id = "display-label-container";
 
-    displayLabel.innerHTML += `
-        <h5>PRODUCTS</h5>
-        <h5>PRICE</h5>
-        <h5>QUANTITY</h5>
-        <h5>TOTAL</h5>
-     `
-     updateCart()
+        displayLabel.innerHTML += `
+            <h5>PRODUCTS</h5>
+            <h5>PRICE</h5>
+            <h5>QUANTITY</h5>
+            <h5>TOTAL</h5>
+        `
+        updateCart()
 
-     let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
-     deleteButtons.forEach(button => {button.addEventListener("click", removeFromCart)});
+        let deleteButtons = shopcartOverlay.querySelectorAll(".deleteButton");
+        deleteButtons.forEach(button => {button.addEventListener("click", removeFromCart)});
 
-     let upArrow = document.querySelectorAll(".fa-angle-up")
-     let downArrow = document.querySelectorAll(".fa-angle-down");
-     upArrow.forEach(button =>{button.addEventListener("click", addMore)});
-     downArrow.forEach(button => {button.addEventListener("click", reduce)});
-
-     
+        let upArrow = document.querySelectorAll(".fa-angle-up")
+        let downArrow = document.querySelectorAll(".fa-angle-down");
+        upArrow.forEach(button =>{button.addEventListener("click", addMore)});
+        downArrow.forEach(button => {button.addEventListener("click", reduce)});
 }
 
 
@@ -111,7 +109,7 @@ function removeFromCart(event) {
     displayCart()
 }
 
-//HERE IS MY HIDECART FUNCTION--------------------------------------------------
+// HERE IS MY HIDECART FUNCTION--------------------------------------------------
 function hideCart() {
     shopcartOverlay.innerHTML = ""
     shopcartOverlay.style.right = "-100vw";
