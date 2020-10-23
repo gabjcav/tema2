@@ -59,3 +59,17 @@ footer {
     font-size: .5rem;
     color: rgb(77, 75, 75);
 }
+
+@media only screen and (max-width: 800px) {
+    #footerInfo-container h4 {
+        margin: 1rem 0;
+        font-size: 2rem;
+
+    }
+
+    #contact-info p, #footerSupp-container p{
+        font-size: 1.5rem;
+        line-height: 20px;
+    }
+    
+}

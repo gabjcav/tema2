@@ -53,7 +53,7 @@ nav {
 #menu {
     transition: 1s;
     position: absolute;
-    right: 100vw;
+    right: 200vw;
     top: 5rem;
     z-index: 2;
     height: 100vh;

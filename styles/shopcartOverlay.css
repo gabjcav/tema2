@@ -1,11 +1,10 @@
 #shopCart-overlay {
     position: absolute;
     right: -100vw;
-    /* top: 0; */
     z-index: 1;
     background-color: lightgrey;
     height: 100%;
-    width: 50vw;
+    width: 70vw;
     transition: .5s;
 }
 
@@ -71,7 +70,7 @@ i {
 #display-subTot-container {
     display: flex;
     font-size: 2rem;
-    padding-left: .5rem;
+    padding: 1rem 0 0 6rem;
 }
 
 #subTot-text {
@@ -79,4 +78,12 @@ i {
     border: .1rem solid black;
     border-radius: 5rem;
     background-color: lightgoldenrodyellow;
+}
+
+@media only screen and (max-width: 800px) {
+    #shopCart-overlay {
+        width: 100vw;
+        padding-left: 2rem;
+    }
+    
 }

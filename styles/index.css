@@ -12,6 +12,7 @@ body {
     font-family: sans-serif;
     background-color: white;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 .title-container {
@@ -105,9 +106,9 @@ h2 {
 }
 
 #skates, #gear {
-    margin: 1rem;
-    height: 50rem;
     height: auto;
+    width: 100vw;
+    margin: 0 5px;
 }
 
 h3 {
@@ -124,7 +125,8 @@ h3 {
 #skate-container, #gear-container {
     align-self: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 475px));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 475px));
+    /* grid-template-columns: repeat(3, 1fr); I HAD 475 PX on the MAX BEFORE*/
     grid-auto-rows: 30rem;
     padding: 3rem;
     grid-gap: 1rem;
@@ -227,62 +229,12 @@ p {
     #burger {
         width: 50%;
     }
-    /* #shopCart-overlay {
-        left: -3rem;
-        width: 95vw;
-        height: 40rem;
-        margin-left: 4rem;
-    }
 
-    #display-label-container {
-        font-size: 15px;
-        height: 4rem;
-        letter-spacing: 0;
-    }
-
-    .displayItem-container {
-        width: 100%;
-    }
-
-    .name-box {
-        gap: 0;
-        flex-direction: column;
-
-    }
-    .name-box > h5 {
-        font-size: 1rem;
-        align-self: center;
-        margin: .5rem 0;
-
-    }
-
-    .name-box > img {
-        width: 50px;
-        height: 50px;
-        margin: 0 auto;
-    }
-
-    .price-box {
-        font-size: 1.5rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .type-box {
-        font-size: 1.5rem;
-    }
-
-    .qty-box {
-        font-size: 1.5rem;
-    }
-
-    i {
-        padding: 0 .5rem 0 .5rem;
-    }
     h3 {
         font-size: 3rem;
-        letter-spacing: .5rem;
-    } */
+        letter-spacing: 1rem;
+        margin: 1px 0;
+    }
 
     article > img {
         width: 125px;
@@ -290,20 +242,33 @@ p {
         margin: 0 auto;
     }
 
-    #skate-container {
+    #skate-container, #gear-container {
         padding: 0;
     }
-    .skate-box {
+
+    .skate-box, .gear-box {
         flex-direction: column;
         padding: 0;
         overflow: hidden;
+        width: 95%;
+        align-content: center;
     }
 
     .descrip-box {
-        flex-direction: column;
         left: 0rem;
         top: 12rem;
         width: 100%;
+    }
+
+    #gear-descrip-box {
+        left: 0;
+        width: 100%;
+        align-self: center;
+        
+    }
+
+    h4 {
+        font-size: 2rem;
     }
 
     .select-btn {
